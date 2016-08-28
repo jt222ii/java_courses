@@ -19,11 +19,6 @@ public class HighLow {
         int max = 100, min = 1;
 
         int secretNumber = generateOddRandomNumber(max, min);
-        for (int i = 0; i < 100; i++)
-        {
-            System.out.println(secretNumber);
-            secretNumber = generateOddRandomNumber(max, min);
-        }
         System.out.println("Guess the odd number between 1-100");
         while(!gameOver && !gameWon)
         {
