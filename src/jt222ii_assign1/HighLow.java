@@ -54,17 +54,15 @@ public class HighLow {
             System.out.println("Correct after only " + guessNumber + " guesses!");
         }
     }
-    public static int generateOddRandomNumber(int Max, int Min)
+    public static int generateOddRandomNumber(int max, int min)
     {
-        if (Max % 2 == 0)
+        if (min % 2 == 0) //Minimum value needs to be odd.
         {
-            Max--;
+            min++;
         }
-        if (Min % 2 == 0)
-        {
-            Min++;
-        }
-        return Min + 2*(int)(Math.random()*((Max-Min)/2+1));
+        //randoms 0 - <1 and multiplies it by the integer ((maximum-minimum)/2+1) also makes the result an integer with (int).
+        //then multiplies that with 2 and adds the minimum value to get a value within the given range.
+        return (int)(Math.random()*((max-min)/2+1)) * 2 + min;
     }
     public static int readInt(String message)
     {
