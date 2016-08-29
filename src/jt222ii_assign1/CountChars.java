@@ -53,7 +53,6 @@ public class CountChars {
             try{
                 for (String line : Files.readAllLines(Paths.get(path))) {
                     for(char c : line.toCharArray()){
-                        System.out.println(Character.getType(c));
                         if(Character.isDigit(c))
                         {
                             numbers++;
