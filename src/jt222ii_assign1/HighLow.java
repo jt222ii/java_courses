@@ -8,6 +8,7 @@ import java.util.Random;
  */
 public class HighLow {
     static Scanner scan = new Scanner(System.in);
+    static Random rand = new Random();
 
     public static void main (String args[])
     {
@@ -19,6 +20,10 @@ public class HighLow {
         int max = 100, min = 1;
 
         int secretNumber = generateOddRandomNumber(max, min);
+        for (int i = 0; i < 100; i++){
+            secretNumber = generateOddRandomNumber(max, min);
+            System.out.println(secretNumber);
+        }
         System.out.println("Guess the odd number between 1-100");
         while(!gameOver && !gameWon)
         {
@@ -60,9 +65,9 @@ public class HighLow {
         {
             min++;
         }
-        //randoms 0 - <1 and multiplies it by the integer ((maximum-minimum)/2+1) also makes the result an integer with (int).
-        //then multiplies that with 2 and adds the minimum value to get a value within the given range.
-        return (int)(Math.random()*((max-min)/2+1)) * 2 + min;
+        //randoms an odd number
+        return rand.nextInt((max-min)/2+1)*2+min;
+
     }
     public static int readInt(String message)
     {
