@@ -36,7 +36,13 @@ public class ArraysMain {
         System.out.println("absDif:");
         int[] arr1 = {1,2,3,4,5};
         int[] arr2 = {1,1,1,1,1};
-        System.out.println("using ({1,2,3,4,5}, {1,1,1,1,1}). Result should be {0,1,2,3,4}" + Arrays.toString(Arrays.absDif(arr1, arr2)));
+        try {
+            System.out.println("using ({1,2,3,4,5}, {1,1,1,1,1}). Result should be {0,1,2,3,4}" + Arrays.toString(Arrays.absDif(arr1, arr2)));
+        }
+        catch(IllegalArgumentException e)
+        {
+            System.out.println(e.getMessage());
+        }
 
     }
 }
