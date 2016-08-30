@@ -66,6 +66,7 @@ public class Arrays {
 
     public static boolean hasSubsequence(int[] arr, int[] sub)//Method that returns true if the subsequence sub is a part of the array arr, otherwise false.
     {
+        int matches = 0;
         if(arr.length < sub.length)
         {
             System.out.println("Can't look for a sequence larger than the array you're searching in!");
@@ -75,15 +76,20 @@ public class Arrays {
         {
             for (int y = 0; y < sub.length; y++)//if a match is found keep looking if it is a sequence
             {
-                if(sub[y] != arr[i+y])
+                if(i+y <= arr.length - 1 && sub[y] == arr[i+y])
+                {
+                    matches++;
+                    if(matches == sub.length)
+                    {
+                        return true;
+                    }
+                }
+                else
                 {
                     break;
                 }
-                else if(y == sub.length-1)//if the loop was not broken the sequence was found.
-                {
-                    return true;
-                }
             }
+            matches = 0;
         }
         return false;
     }

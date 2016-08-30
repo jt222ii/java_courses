@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04c8ed58-e87d-4363-93c5-e1b8fe57faa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Histogram/wat.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Histogram/wat1.dat" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Arrays/Arrays.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Arrays/Arrays.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Arrays/ArraysMain.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Arrays/ArraysMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/ArraysMain.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/ArraysMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java" />
     </list>
     <ignored path="2DV600.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,33 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Histogram.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java">
+      <file leaf-file-name="Arrays.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CountChars.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/CountChars/CountChars.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="305">
+              <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Arrays.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java">
+      <file leaf-file-name="ArraysMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Arrays/ArraysMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+            <state relative-caret-position="169">
+              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -89,10 +77,10 @@
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/CountChars.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/SergioGarciaBeatsTheAmericans.txt" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/HighLow/HighLow.java" />
-        <option value="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/ArraysMain.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Histogram/wat.dat" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java" />
+        <option value="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/ArraysMain.java" />
       </list>
     </option>
   </component>
@@ -134,8 +122,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,7 +229,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -670,7 +658,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -679,6 +667,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/CountChars/CountChars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/HighLow/HighLow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -691,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="93" selection-start-line="17" selection-start-column="93" selection-end-line="17" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,45 +793,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Arrays/ArraysMain.java">
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Histogram/wat.dat" />
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Histogram/wat.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="569">
+          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/CountChars/CountChars.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
+        <state relative-caret-position="17">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Arrays/ArraysMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+        <state relative-caret-position="305">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
