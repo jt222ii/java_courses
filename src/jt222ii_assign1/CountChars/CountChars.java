@@ -17,7 +17,6 @@ import java.nio.file.Paths;
  */
 public class CountChars {
 
-    public static BufferedReader bReader;
     public static Scanner scan = new Scanner(System.in);
     public static void main (String args[])
     {
