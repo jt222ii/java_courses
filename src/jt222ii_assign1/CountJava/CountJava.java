@@ -35,9 +35,11 @@ public class CountJava {
 
     public static void printFileInfo()
     {
+        int number = 0;
         for(File file: files)
         {
-            System.out.println(file.getName()+": "+countLinesOfFile(file));
+            number++;
+            System.out.println(number+": "+file.getName()+": "+countLinesOfFile(file));
         }
     }
 

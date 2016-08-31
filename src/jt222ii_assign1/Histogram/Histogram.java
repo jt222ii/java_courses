@@ -9,10 +9,20 @@ import java.io.File;
  */
 public class Histogram {
 
-    public static void main (String args[])
+    public static void main (String args[]) throws Exception
     {
-        List<Integer> integersFromDat = getIntegersFromDat(args[0]);
-        createHistogram(integersFromDat);
+        try
+        {
+            if (args[0] != null) {
+                List<Integer> integersFromDat = getIntegersFromDat(args[0]);
+                createHistogram(integersFromDat);
+            } else
+                throw new Exception("Please set a directory!");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void createHistogram(List<Integer> integers)
@@ -36,7 +46,7 @@ public class Histogram {
 
     public static List<Integer> getIntegersFromDat(String path)
     {
-        List<Integer> integerList= new ArrayList<>();
+        List<Integer> integerList = new ArrayList<>();
         try
         {
             Scanner scanner = new Scanner(new File(path));
