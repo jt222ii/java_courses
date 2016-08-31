@@ -61,7 +61,7 @@ public class CountJava {
         }
         catch(Exception e)
         {
-
+            System.out.println("Something went wrong while reading the file!");
         }
         return count;
     }
