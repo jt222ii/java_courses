@@ -11,28 +11,8 @@ public class Histogram {
 
     public static void main (String args[])
     {
-        String path = getPathFromUser("Enter the path to your dat file: ");
-        List<Integer> integersFromDat = getIntegersFromDat(path);
+        List<Integer> integersFromDat = getIntegersFromDat(args[0]);
         createHistogram(integersFromDat);
-    }
-
-    public static String getPathFromUser(String message)
-    {
-        Scanner scanner = new Scanner(System.in);
-        while (true)
-        {
-            try
-            {
-                System.out.println(message);
-                String input = scanner.nextLine();
-                return input;
-            }
-            catch(Exception e)
-            {
-                System.out.println("Invalid input");
-                scanner.next();
-            }
-        }
     }
 
     public static void createHistogram(List<Integer> integers)
