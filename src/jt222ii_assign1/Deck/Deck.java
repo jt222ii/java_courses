@@ -1,12 +1,12 @@
 package jt222ii_assign1.Deck;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+
 /**
  * Created by jonastornfors on 2016-09-01.
  */
 public class Deck {
 
-    int cardsRemaining = 52;
     ArrayList<Card> deck = new ArrayList<>();
     public Deck()
     {
@@ -18,10 +18,27 @@ public class Deck {
             }
         }
     }
-
-    public static void main (String args[]) throws Exception
+    public void Shuffle()
     {
-
+        if (deckSize() == 52) {
+            Collections.shuffle(deck);
+        }
+        else
+            System.out.println("Can only shuffle a complete deck!");
     }
 
+    public int deckSize()
+    {
+        return deck.size();
+    }
+    public Card handOutNextCard()
+    {
+        if(deckSize()>0)
+        {
+            Card cardToHandOut = deck.get(0);
+            deck.remove(0);
+            return cardToHandOut;
+        }
+        return null;
+    }
 }
