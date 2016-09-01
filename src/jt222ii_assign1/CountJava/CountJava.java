@@ -12,14 +12,25 @@ public class CountJava {
     static List<File> files = new ArrayList<>();
     public static void main (String args[])
     {
-        System.out.println(args[0]);
-        addFilesToList(args[0]);
-        printFileInfo();
+        if(args.length != 0)
+        {
+            System.out.println(args[0]);
+            addFilesToList(args[0]);
+            printFileInfo();
+        }
+        else
+            System.out.println("Please set program argument!");
+
     }
 
     public static void addFilesToList(String path)
     {
         File directory = new File(path);
+        if(!directory.isDirectory())
+        {
+            System.out.println("not a directory!");
+            return;
+        }
         File[] fileList = directory.listFiles();
         for (File file : fileList) {
             if (file.isFile() && file.getName().endsWith(".java"))

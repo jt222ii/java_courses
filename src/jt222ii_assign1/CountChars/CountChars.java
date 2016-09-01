@@ -20,8 +20,15 @@ public class CountChars {
     public static Scanner scan = new Scanner(System.in);
     public static void main (String args[])
     {
-
-        String path = getPathFromUser("Enter the path to your txt file: ");
+        String path;
+        if(args.length != 0)
+        {
+            path = args[0];
+        }
+        else
+        {
+            path = getPathFromUser("Enter the path to your txt file: ");
+        }
         readFileAndCount(path);
 
     }
