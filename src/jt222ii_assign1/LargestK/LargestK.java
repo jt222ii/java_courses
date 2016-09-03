@@ -33,7 +33,7 @@ public class LargestK {
                 int input = scan.nextInt();
                 if (input < 0)
                 {
-                    System.out.println("Please input a positive integer!");
+                    System.err.println("Please input a positive integer!");
                 }
                 else
                 {
@@ -42,7 +42,7 @@ public class LargestK {
             }
             catch(Exception e)
             {
-                System.out.println("Invalid input");
+                System.err.println("Invalid input");
                 scan.next();
             }
         }

@@ -24,7 +24,7 @@ public class Deck {
             Collections.shuffle(deck);
         }
         else
-            System.out.println("Can only shuffle a complete deck!");
+            System.err.println("Can only shuffle a complete deck!");
     }
 
     public int deckSize()

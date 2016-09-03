@@ -75,7 +75,7 @@ public class HighLow {
                 int input = scan.nextInt();
                 if (input < 1 || input > 100)
                 {
-                    System.out.println("Please input a positive integer 1-100!");
+                    System.err.println("Please input a positive integer 1-100!");
                 }
                 else
                 {
@@ -84,7 +84,7 @@ public class HighLow {
             }
             catch(Exception e)
             {
-                System.out.println("Invalid input");
+                System.err.println("Invalid input");
                 scan.next();
             }
         }

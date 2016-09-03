@@ -19,7 +19,7 @@ public class CountJava {
             printFileInfo();
         }
         else
-            System.out.println("Please set program argument!");
+            System.err.println("Please set program argument!");
 
     }
 
@@ -28,7 +28,7 @@ public class CountJava {
         File directory = new File(path);
         if(!directory.isDirectory())
         {
-            System.out.println("not a directory!");
+            System.err.println("not a directory!");
             return;
         }
         File[] fileList = directory.listFiles();
@@ -74,7 +74,7 @@ public class CountJava {
         }
         catch(Exception e)
         {
-            System.out.println("Something went wrong while reading the file!");
+            System.err.println("Something went wrong while reading the file!");
         }
         return count;
     }

@@ -45,7 +45,7 @@ public class CountChars {
             }
             catch(Exception e)
             {
-                System.out.println("Invalid input");
+                System.err.println("Invalid input");
                 scan.next();
             }
         }
@@ -92,13 +92,13 @@ public class CountChars {
             }
             catch(Exception e)
             {
-                System.out.println("Something went wrong while reading the file!");
+                System.err.println("Something went wrong while reading the file!");
                 return;
             }
         }
         else
         {
-            System.out.println("File not found!");
+            System.err.println("File not found!");
         }
 
 

@@ -69,7 +69,7 @@ public class Arrays {
         int matches = 0;
         if(arr.length < sub.length)
         {
-            System.out.println("Can't look for a sequence larger than the array you're searching in!");
+            System.err.println("Can't look for a sequence larger than the array you're searching in!");
             return false;
         }
         for (int i = 0; i < arr.length; i++)

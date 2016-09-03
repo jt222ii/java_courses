@@ -70,7 +70,7 @@ public class Histogram {
         }
         catch(Exception e)
         {
-            System.out.println("Failed to open file!");
+            System.err.println("Failed to open file!");
         }
         return integerList;
     }
