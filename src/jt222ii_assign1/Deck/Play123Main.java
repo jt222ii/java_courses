@@ -6,17 +6,15 @@ package jt222ii_assign1.Deck;
 public class Play123Main {
     public static void main (String args[])
     {
-        int wins = 0, losses = 0;
-        for (int i = 0; i < 10000; i++)
+        int wins = 0, plays = 10000;
+        for (int i = 0; i < plays; i++)
         {
             if(play123())
             {
                 wins++;
             }
-            else
-                losses++;
         }
-        System.out.println("chance to win is: "+(double)wins/losses*100+"%");
+        System.out.println("chance to win is: "+(double)wins/plays*100+"%");
 
     }
 
