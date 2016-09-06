@@ -27,14 +27,22 @@ public class Histogram {
 
     public static void createHistogram(List<Integer> integers)
     {
-        int[][] intervals = {{1,10},{11,20},{21,30},{31,40},{41,50},{51,60},{61,70},{71,80},{81,90},{91,100}, {101,200}};
         String[] histogramRows = {"1-10   : ","11-20  : ","21-30  : ","31-40  : ","41-50  : ","51-60  : ","61-70  : ","71-80  : ","81-90  : ","91-100 : ","101-200: "};
+        int intervalCount = 11;
         for (int i: integers)
         {
-            for (int x = 0; x < intervals.length; x++)
+            for(int x = 0; x < intervalCount; x++)
             {
-                if (i >= intervals[x][0] && i <= intervals[x][1]) {
-                    histogramRows[x]+= "*";
+                if(x == intervalCount-1)
+                {
+                    if(i >= 101 && i <= 200)
+                    {
+                        histogramRows[x] += "*";
+                    }
+                }
+                else if(i >= 1 + 10 * x && i <= 10 + 10 * x)
+                {
+                    histogramRows[x] += "*";
                 }
             }
         }

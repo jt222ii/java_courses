@@ -84,10 +84,10 @@ public class CountChars {
                 }
                 System.out.println(
                         "Numbers: " + numbers + "\n"+
-                                "Upper case letters: " + upperCaseLetters + "\n"+
-                                "Lower case letters: " + lowerCaseLetters + "\n"+
-                                "Whitespaces: " + whitespaces + "\n"+
-                                "Other: " + other
+                        "Upper case letters: " + upperCaseLetters + "\n"+
+                        "Lower case letters: " + lowerCaseLetters + "\n"+
+                        "Whitespaces: " + whitespaces + "\n"+
+                        "Other: " + other
                 );
             }
             catch(Exception e)
