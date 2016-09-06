@@ -1,5 +1,6 @@
 package jt222ii_assign1.Queue;
 import java.util.Iterator;
+
 /**
  * Created by jonastornfors on 2016-09-06.
  */
@@ -7,10 +8,11 @@ import java.util.Iterator;
 public class Queue implements QueueInterface {
 
     private int queueSize = 0;
-    private Object[] values;
+    private QueueObject head, tail;
 
-    public Queue() {
-        values = new Object[128];
+    public Queue()
+    {
+       enqueue(new QueueObject(new Object()));
     }
 
     @Override
@@ -24,30 +26,50 @@ public class Queue implements QueueInterface {
     }
 
     @Override
-    public void enqueue(Object element) {
-        values[queueSize] = element;
+    public void enqueue(Object element)
+    {
+        QueueObject newObject = new QueueObject(element);
+        if(queueSize == 0)
+        {
+            head = newObject;
+        }
+        else
+        {
+            tail.setNext(newObject);
+        }
+        tail = newObject;
         queueSize++;
     }
 
     @Override
     public Object dequeue() throws IndexOutOfBoundsException {
-        Object dequeuedElement = values[1];
+        Object dequeuedElement = head;
+        head = head.getNext();
         queueSize--;
         return dequeuedElement;
     }
 
     @Override
     public Object first() throws IndexOutOfBoundsException {
-        return values[0];
+        return head;
     }
 
     @Override
     public Object last() throws IndexOutOfBoundsException {
-        return values[queueSize-1];
+        return tail;
     }
 
     @Override
     public boolean contains(Object o) {
+        QueueObject object = head;
+        for (int i = 0; i < queueSize; i++)
+        {
+            if(object.getObject() == object)
+            {
+                return true;
+            }
+            object = object.getNext();
+        }
         return false;
     }
 
@@ -59,7 +81,7 @@ public class Queue implements QueueInterface {
         @Override
         public Integer next()
         {
-            return 0;
+            return null;
         }
 
         @Override
