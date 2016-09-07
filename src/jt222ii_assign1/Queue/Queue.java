@@ -74,20 +74,24 @@ public class Queue implements QueueInterface {
     }
 
     @Override
-    public Iterator<Integer> iterator() {return new ListIterator();}
+    public Iterator<Object> iterator() {return new ListIterator();}
 
-    private class ListIterator implements Iterator<Integer>
+    private class ListIterator implements Iterator<Object>
     {
+        private  QueueObject qO = head;
         @Override
-        public Integer next()
+        public Object next()
         {
-            return null;
+            Object obj = qO.object;
+            qO = qO.getNext();
+            return obj;
+
         }
 
         @Override
         public boolean hasNext()
         {
-            return false;
+            return qO != null;
         }
     }
 }
