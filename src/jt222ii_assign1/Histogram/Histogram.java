@@ -13,7 +13,7 @@ public class Histogram {
     {
         try
         {
-            if (args[0] != null) {
+            if (args.length != 0) {
                 List<Integer> integersFromDat = getIntegersFromDat(args[0]);
                 createHistogram(integersFromDat);
             } else
