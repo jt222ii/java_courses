@@ -1,15 +1,11 @@
-package jt222ii_assign1;
+package jt222ii_assign1.CountChars;
 
 
-import com.sun.xml.internal.fastinfoset.util.CharArray;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.Scanner;
 import java.nio.file.Files;
 import java.io.File;
-import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.charset.Charset;
 
 
 /**
@@ -57,30 +53,28 @@ public class CountChars {
         File f = new File(path);
         if(f.exists() && !f.isDirectory()) {
             try{
-                for (String line : Files.readAllLines(Paths.get(path))) {
-                    for(char c : line.toCharArray()){
-                        if(Character.isDigit(c))
-                        {
-                            numbers++;
-                        }
-                        else if(Character.isWhitespace(c))
-                        {
-                            whitespaces++;
-                        }
-                        else if(Character.isLowerCase(c))
-                        {
-                            lowerCaseLetters++;
-                        }
-                        else if(Character.isUpperCase(c))
-                        {
-                            upperCaseLetters++;
-                        }
-                        else
-                        {
-                            other++;
-                        }
+                String text = new String(Files.readAllBytes(Paths.get(path)));
+                for(char c : text.toCharArray()){
+                    if(Character.isDigit(c))
+                    {
+                        numbers++;
                     }
-
+                    else if(Character.isWhitespace(c))
+                    {
+                        whitespaces++;
+                    }
+                    else if(Character.isLowerCase(c))
+                    {
+                        lowerCaseLetters++;
+                    }
+                    else if(Character.isUpperCase(c))
+                    {
+                        upperCaseLetters++;
+                    }
+                    else
+                    {
+                        other++;
+                    }
                 }
                 System.out.println(
                         "Numbers: " + numbers + "\n"+
@@ -92,7 +86,7 @@ public class CountChars {
             }
             catch(Exception e)
             {
-                System.err.println("Something went wrong while reading the file!");
+                System.err.println(e.getMessage());
                 return;
             }
         }

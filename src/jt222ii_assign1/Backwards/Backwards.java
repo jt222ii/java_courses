@@ -1,4 +1,4 @@
-package jt222ii_assign1;
+package jt222ii_assign1.Backwards;
 
 import java.util.Scanner; //http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Scanner.html
 /**

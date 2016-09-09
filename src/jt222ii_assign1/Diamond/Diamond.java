@@ -1,4 +1,4 @@
-package jt222ii_assign1;
+package jt222ii_assign1.Diamond;
 
 import java.util.Scanner;
 
@@ -54,7 +54,7 @@ public class Diamond {
             }
             catch(Exception e)
             {
-                System.out.println(e.getMessage());
+                System.err.println("Did not enter a valid odd positive integer!");
                 System.exit(0);
             }
         }

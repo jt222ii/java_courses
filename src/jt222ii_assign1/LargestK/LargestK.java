@@ -1,4 +1,4 @@
-package jt222ii_assign1;
+package jt222ii_assign1.LargestK;
 
 import java.util.Scanner;
 

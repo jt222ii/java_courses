@@ -1,4 +1,4 @@
-package jt222ii_assign1;
+package jt222ii_assign1.HighLow;
 
 import java.util.Scanner;
 import java.util.Random;
