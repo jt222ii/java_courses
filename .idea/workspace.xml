@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04c8ed58-e87d-4363-93c5-e1b8fe57faa0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Arrays/Arrays.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Arrays/Arrays.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/CountChars/CountChars.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/CountChars/CountChars.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/CountJava/CountJava.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/CountJava/CountJava.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Histogram/Histogram.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Histogram/Histogram.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Queue/QueueMain.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign1/Queue/QueueMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Arrays/Arrays.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/CountChars/CountChars.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/CountChars/CountChars.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/CountDigits/CountDigits.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/CountDigits/CountDigits.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/CountJava/CountJava.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/CountJava/CountJava.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Deck/Deck.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Deck/Deck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Deck/Play123Main.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Deck/Play123Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Deck/PlayCardsMain.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Deck/PlayCardsMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Fraction/Fraction.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Fraction/Fraction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/LargestK/LargestK.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/LargestK/LargestK.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Queue/Queue.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Queue/Queue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign1/Queue/QueueMain.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign1/Queue/QueueMain.java" />
     </list>
     <ignored path="2DV600.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,15 +23,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Queue.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Queue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Queue/Queue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="0">
               <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding>
                 <element signature="e#3312#3313#0" expanded="true" />
                 <element signature="e#3346#3347#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fraction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Fraction/Fraction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="57" column="116" selection-start-line="57" selection-start-column="116" selection-end-line="57" selection-end-column="116" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,11 +94,11 @@
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Deck/Deck.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Deck/Play123Main.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Deck/PlayCardsMain.java" />
-        <option value="$PROJECT_DIR$/src/jt222ii_assign1/Fraction/Fraction.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/HighLow/HighLow.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Histogram/Histogram.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/LargestK/LargestK.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign1/Queue/Queue.java" />
+        <option value="$PROJECT_DIR$/src/jt222ii_assign1/Fraction/Fraction.java" />
       </list>
     </option>
   </component>
@@ -147,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -186,7 +180,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -587,7 +580,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256785" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -604,6 +596,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256785" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -672,27 +665,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Queue/object.java" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Queue/QueueObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="75" column="27" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/LoremIpsum.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Test.txt" />
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/LoremIpsum.txt" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/SergioGarciaBeatsTheAmericans.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
           <caret line="68" column="48" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,9 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
           <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -734,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,19 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Fraction/Fraction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/HighLow/HighLow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="16" column="114" selection-start-line="16" selection-start-column="114" selection-end-line="16" selection-end-column="114" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -867,12 +823,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Queue/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="0">
           <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
             <element signature="e#3312#3313#0" expanded="true" />
             <element signature="e#3346#3347#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign1/Fraction/Fraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="57" column="116" selection-start-line="57" selection-start-column="116" selection-end-line="57" selection-end-column="116" />
+          <folding />
         </state>
       </provider>
     </entry>

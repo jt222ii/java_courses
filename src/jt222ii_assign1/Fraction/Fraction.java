@@ -52,7 +52,10 @@ public class Fraction {
     {
         return num+"/"+denom;
     }//returns the fraction as a string
-    public void simplify()//simplifies the fraction
+
+
+    //simplifies the fraction
+    public void simplify()//I have used help from https://answers.yahoo.com/question/index?qid=20101104212230AAqKxYa
     {
         int numerator = num;
         int denominator = denom;
@@ -65,7 +68,6 @@ public class Fraction {
         int gcd = numerator;
         num /= gcd;
         denom /= gcd;
-
     }
 
 
