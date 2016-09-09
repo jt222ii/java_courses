@@ -14,16 +14,16 @@ public class CountJava {
     {
         if(args.length != 0)
         {
-            System.out.println(args[0]);
-            addFilesToList(args[0]);
-            printFileInfo();
+            System.out.println(args[0]);//prints out the path
+            addFilesToList(args[0]);//gets all the files in the directory and subdirectories and puts them into the list
+            printFileInfo();//prints the line counts of all files
         }
         else
             System.err.println("Please set program argument!");
 
     }
 
-    public static void addFilesToList(String path)
+    public static void addFilesToList(String path)//adds all the .java files to the list.
     {
         File directory = new File(path);
         if(!directory.isDirectory())
@@ -44,7 +44,7 @@ public class CountJava {
         }
     }
 
-    public static void printFileInfo()
+    public static void printFileInfo()//prints out the line count of the files in the list.
     {
         int number = 0;
         for(File file: files)
@@ -54,7 +54,7 @@ public class CountJava {
         }
     }
 
-    public static int countLinesOfFile(File file)
+    public static int countLinesOfFile(File file)//Counts the lines of the specified file
     {
         int count = 0;
         try
@@ -70,7 +70,6 @@ public class CountJava {
                 else
                     break;
             }
-
         }
         catch(Exception e)
         {

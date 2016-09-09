@@ -12,7 +12,7 @@ public class CountDigits {
     {
         int number = readInt();
         int zeroes=0, odd=0, even=0, sum=0;
-        String string = String.valueOf(number);
+        String string = String.valueOf(number);//converts the int to string so you can compare each char individually
         for (char c: string.toCharArray())
         {
             int n = Character.getNumericValue(c);
@@ -38,7 +38,7 @@ public class CountDigits {
         );
     }
 
-    public static int readInt()
+    public static int readInt()//Gets an integer from the user
     {
         while (true)
         {

@@ -34,6 +34,6 @@ public class QueueMain {
             System.out.println("Dequeued: " + queue.dequeue());
             System.out.println("Queue size is now: " + queue.size());
         }
-        System.out.println("Checking if list is empty: " + queue.isEmpty());
+        System.out.println("List should now be empty: " + queue.isEmpty());
     }
 }

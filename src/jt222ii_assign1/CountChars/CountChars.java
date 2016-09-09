@@ -5,7 +5,6 @@ import java.util.Scanner;
 import java.nio.file.Files;
 import java.io.File;
 import java.nio.file.Paths;
-import java.nio.charset.Charset;
 
 
 /**
@@ -17,11 +16,11 @@ public class CountChars {
     public static void main (String args[])
     {
         String path;
-        if(args.length != 0)
+        if(args.length != 0)//If a program argument is specified it will use that one
         {
             path = args[0];
         }
-        else
+        else//else you get the option to type in the path
         {
             path = getPathFromUser("Enter the path to your txt file: ");
         }
@@ -29,7 +28,7 @@ public class CountChars {
 
     }
 
-    public static String getPathFromUser(String message)
+    public static String getPathFromUser(String message)//gets the path of the file from the user
     {
         while (true)
         {
@@ -47,7 +46,7 @@ public class CountChars {
         }
     }
 
-    public static void readFileAndCount(String path)
+    public static void readFileAndCount(String path)//reads the file and counts the occurences of lowercase, uppercase, whitespace etc
     {
         int whitespaces = 0, upperCaseLetters = 0, lowerCaseLetters = 0, numbers = 0, other = 0;
         File f = new File(path);

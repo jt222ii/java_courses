@@ -16,43 +16,43 @@ public class Fraction {
         denom = denominator;
         simplify();
     }
-    public int getNumerator()
+    public int getNumerator()//returns the numerator
     {
         return num;
     }
-    public int getDenominator()
+    public int getDenominator()//returns the denominator
     {
         return denom;
     }
-    public boolean isNegative()
+    public boolean isNegative()//returns true if the fraction is negative
     {
         return (double)num/(double)denom < 0;
     }
-    public Fraction add(Fraction frac2)
+    public Fraction add(Fraction frac2)//adds fraction 1 with fraction 2
     {
         return new Fraction((frac2.getDenominator()*num)+(frac2.getNumerator()*denom), denom*frac2.getDenominator());
     }
-    public Fraction subtract(Fraction frac2)
+    public Fraction subtract(Fraction frac2)//subtracts fraction 2 from fraction 1
     {
         return new Fraction(frac2.getDenominator()*num-frac2.getNumerator()*denom, denom*frac2.getDenominator());
     }
-    public Fraction multiply(Fraction frac2)
+    public Fraction multiply(Fraction frac2)//Multiplies the two fractions
     {
         return new Fraction(frac2.getNumerator()*num, denom*frac2.getDenominator());
     }
-    public Fraction divide(Fraction frac2)
+    public Fraction divide(Fraction frac2)//divides the two fractions using the multiply function as (1/2)/(2/3) is the same as (1/2)*(3/2)
     {
-        return multiply(new Fraction(frac2.getDenominator(), frac2.getNumerator()));
+        return multiply(new Fraction(frac2.getDenominator(), frac2.getNumerator())); // multiplies using a new fraction with the denominator and numerator swapped
     }
-    public boolean isEqualTo(Fraction frac2)
+    public boolean isEqualTo(Fraction frac2)//returns true if the two fractions is equal
     {
         return (double)num/denom == (double)frac2.getNumerator()/frac2.getDenominator();
     }
     public String toString()
     {
         return num+"/"+denom;
-    }
-    public void simplify()
+    }//returns the fraction as a string
+    public void simplify()//simplifies the fraction
     {
         int numerator = num;
         int denominator = denom;

@@ -9,7 +9,7 @@ public class PlayCardsMain {
         Deck deck = new Deck();
         deck.Shuffle();
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)//prints out some of the decks cards
         {
             Card card = deck.handOutNextCard();
             System.out.println(card.getValue()+" of "+card.getColor());

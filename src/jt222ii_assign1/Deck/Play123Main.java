@@ -26,15 +26,15 @@ public class Play123Main {
         for (int y = 0; y<52; y++)
         {
             Card card = deck.handOutNextCard();
-            if (card.getValue().ordinal() == count)
+            if (card.getValue().ordinal() == count)//if count is the same as the ordinal of enum you have lost
             {
                 return false;
             }
-            if(count == 2)
+            if(count == 2)// if count has reached 2 (0,1,2) count should start over
             {
                 count = 0;
             }
-            else
+            else//else keep counting
             {
                 count++;
             }

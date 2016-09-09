@@ -21,38 +21,38 @@ public class Histogram {
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 
     public static void createHistogram(List<Integer> integers)
     {
         String[] histogramRows = {"1-10   : ","11-20  : ","21-30  : ","31-40  : ","41-50  : ","51-60  : ","61-70  : ","71-80  : ","81-90  : ","91-100 : ","101-200: "};
-        int intervalCount = 11;
-        for (int i: integers)
+        int intervalCount = histogramRows.length;
+        for (int i: integers)//for every integer in integer in the list. Look what interval it is in and add an asterisk to that interval
         {
-            for(int x = 0; x < intervalCount; x++)
+            for(int x = 0; x < intervalCount; x++)//checks all the 11 intervals
             {
-                if(x == intervalCount-1)
+                if(x == intervalCount-1)//if its the last interval it should check 101-200 instead
                 {
                     if(i >= 101 && i <= 200)
                     {
                         histogramRows[x] += "*";
                     }
                 }
-                else if(i >= 1 + 10 * x && i <= 10 + 10 * x)
+                else if(i >= 1 + 10 * x && i <= 10 + 10 * x)//else check all the other intervals.       when x is 0 it will check i >= 1 && i <= 10. if x is 1 it will instead check i >= 11 && i <= 20
                 {
                     histogramRows[x] += "*";
                 }
             }
         }
-        for (int i = 0; i < histogramRows.length; i++)
+        for (int i = 0; i < histogramRows.length; i++)//print all the rows
         {
             System.out.println(histogramRows[i]);
         }
     }
 
-    public static List<Integer> getIntegersFromDat(String path)
+    public static List<Integer> getIntegersFromDat(String path)//gets all the integers from the file in the path
     {
         List<Integer> integerList = new ArrayList<>();
         try

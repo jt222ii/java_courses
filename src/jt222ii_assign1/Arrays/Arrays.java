@@ -1,6 +1,5 @@
 package jt222ii_assign1.Arrays;
 
-import java.util.Collections;
 /**
  * Created by Jonas on 2016-08-29.
  */

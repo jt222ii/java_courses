@@ -14,7 +14,7 @@ public class LargestK {
         int n = readInt();
         int sum = 0;
 
-        while(sum+k+2 <= n)
+        while(sum+k+2 <= n)//while the sum of the next step is does not surpass n keep adding 2 to k and k to sum.
         {
             k += 2;
             sum += k;
