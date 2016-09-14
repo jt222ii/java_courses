@@ -10,7 +10,7 @@ public class Bus extends Vehicle
     {
         if(amountOfPassengers > maxPassengers)
         {
-            //kasta skit
+            throw new IndexOutOfBoundsException("Can't add more than twenty passengers to a bus!");
         }
         setCostPerPassenger(10);
         setSpace(4);

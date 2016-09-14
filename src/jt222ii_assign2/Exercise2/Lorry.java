@@ -10,7 +10,7 @@ public class Lorry extends Vehicle
     {
         if(amountOfPassengers > maxPassengers)
         {
-            //kasta skit
+            throw new IndexOutOfBoundsException("Can't add more than two passengers to a lorry!");
         }
         setCostPerPassenger(15);
         setSpace(8);

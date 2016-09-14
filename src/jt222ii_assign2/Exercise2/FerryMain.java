@@ -7,18 +7,37 @@ public class FerryMain {
     public static void main(String[] args)
     {
         FerrySys ferry = new FerrySys();
+        System.out.println("Adding 5 cars with 4 passengers each");
         ferry.embark(new Car(4));
         ferry.embark(new Car(4));
         ferry.embark(new Car(4));
         ferry.embark(new Car(4));
         ferry.embark(new Car(4));
 
+
+        System.out.println("Adding 2 bicycles(1 passenger each default)");
         ferry.embark(new Bicycle());
         ferry.embark(new Bicycle());
 
+        System.out.println("Adding a lorry with 2 passengers");
         ferry.embark(new Lorry(2));
+
+        System.out.println("Adding a bus with 18 passengers");
         ferry.embark(new Bus(18));
 
+
+        System.out.println();
         System.out.println(ferry.toString());
+        System.out.println();
+        System.out.println("Disembarking ferry");
+        ferry.disembark();
+        System.out.println("Ferry should now be empty and profit stay the same:");
+        System.out.println(ferry.toString());
+
+        System.out.println("adding a bus with 12 passengers");
+        ferry.embark(new Bus(12));
+
+        System.out.println(ferry.toString());
+
     }
 }

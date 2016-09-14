@@ -97,7 +97,9 @@ public class FerrySys implements Ferry
         ListIterator iterator = new ListIterator();
         while(iterator.hasNext()) {
             Vehicle v = iterator.next();
-            string += "\nType: " + v.getClass().getSimpleName() + " | Passengers: " + v.getPassengerCount();
+            string += "\nType: " + v.getClass().getSimpleName() + " | Passengers: " +
+                        v.getPassengerCount() + " | Base cost: " + v.getBaseCost() + " Cost per passenger: " + v.getCostPerPassenger()+
+                        " Total: "+(v.getBaseCost()+v.getCostPerPassenger()*v.getPassengerCount());
         }
 
         return string;

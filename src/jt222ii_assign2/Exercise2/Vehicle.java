@@ -39,6 +39,11 @@ public class Vehicle
         return baseCost;
     }
 
+    public int getCostPerPassenger()
+    {
+        return costPerPassenger;
+    }
+
     public double getSpace()
     {
         return space;
