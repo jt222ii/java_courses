@@ -8,9 +8,9 @@ public class Bus extends Vehicle
     private int maxPassengers = 20;
     public Bus(int amountOfPassengers)
     {
-        if(amountOfPassengers > maxPassengers)
+        if(amountOfPassengers > maxPassengers || amountOfPassengers < 1)
         {
-            throw new IndexOutOfBoundsException("Can't add more than twenty passengers to a bus!");
+            throw new IndexOutOfBoundsException("Unvalid amount of passengers in the bus!");
         }
         setCostPerPassenger(10);
         setSpace(4);

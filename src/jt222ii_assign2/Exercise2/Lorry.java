@@ -8,9 +8,9 @@ public class Lorry extends Vehicle
     private int maxPassengers = 2;
     public Lorry(int amountOfPassengers)
     {
-        if(amountOfPassengers > maxPassengers)
+        if(amountOfPassengers > maxPassengers || amountOfPassengers < 1)
         {
-            throw new IndexOutOfBoundsException("Can't add more than two passengers to a lorry!");
+            throw new IndexOutOfBoundsException("Unvalid amount of passengers in the lorry!");
         }
         setCostPerPassenger(15);
         setSpace(8);

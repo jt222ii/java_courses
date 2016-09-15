@@ -1,12 +1,9 @@
 package jt222ii_assign2.Exercise2;
 
-import jt222ii_assign1.Queue.Queue;
-
-import javax.management.ObjectName;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Created by jonastornfors on 2016-09-14.
@@ -21,10 +18,7 @@ public class FerrySys implements Ferry
     private List<Passenger> passengers = new ArrayList<>();
     private List<Vehicle> vehicles = new ArrayList<>();
 
-    public FerrySys()
-    {
-
-    }
+    public FerrySys() {}
 
     @Override
     public int countPassengers() {
@@ -33,7 +27,7 @@ public class FerrySys implements Ferry
 
     @Override
     public int countVehicleSpace() {
-        return (int)Math.round(occupiedSpace);
+        return (int)occupiedSpace;
     }
 
     @Override
@@ -72,7 +66,8 @@ public class FerrySys implements Ferry
 
     @Override
     public boolean hasSpaceFor(Vehicle v) {
-        return Math.ceil(occupiedSpace+v.getSpace()) <= maxSpace && !vehicles.contains(v);
+
+        return Math.ceil((int)occupiedSpace+v.getSpace()) <= maxSpace && !vehicles.contains(v);
     }
 
     @Override
@@ -91,7 +86,7 @@ public class FerrySys implements Ferry
         String string = "Ferry!" +
                 "\nVehicles: "+vehicles.size()+
                 "\nPassengers: "+passengers.size()+"/"+maxPassengers+
-                "\nSpace occupied: "+(int)occupiedSpace+"/"+maxSpace+
+                "\nSpace occupied(rounded down): "+countVehicleSpace()+"/"+maxSpace+
                 "\nIncome: "+moneyEarned+"kr"+
                 "\n___________________________________________\nVehicle Details:";
         ListIterator iterator = new ListIterator();

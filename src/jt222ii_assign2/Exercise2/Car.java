@@ -8,9 +8,9 @@ public class Car extends Vehicle
     private int maxPassengers = 4;
     public Car(int amountOfPassengers)
     {
-        if(amountOfPassengers > maxPassengers)
+        if(amountOfPassengers > maxPassengers || amountOfPassengers < 1)
         {
-            throw new IndexOutOfBoundsException("Can't add more than four passengers to a car!");
+            throw new IndexOutOfBoundsException("Unvalid amount of passengers in the car!");
         }
         setCostPerPassenger(15);
         setSpace(1);
