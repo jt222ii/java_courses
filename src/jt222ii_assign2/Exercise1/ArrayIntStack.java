@@ -5,6 +5,7 @@ import jt222ii_assign2.Exercise1.da1031.*;
  */
 public class ArrayIntStack extends AbstractIntCollection implements IntStack {
 
+    /* Add integer at top of stack. */
     @Override
     public void push(int n) {
         size++;
@@ -19,6 +20,7 @@ public class ArrayIntStack extends AbstractIntCollection implements IntStack {
         values[0] = n;
     }
 
+    /* Returns and removes integer at top of stack  */
     @Override
     public int pop() throws IndexOutOfBoundsException {
         if(size == 0)
@@ -34,6 +36,7 @@ public class ArrayIntStack extends AbstractIntCollection implements IntStack {
         return value;
     }
 
+    /* Returns without removing integer at top of stack */
     @Override
     public int peek() throws IndexOutOfBoundsException {
         if(size == 0)
