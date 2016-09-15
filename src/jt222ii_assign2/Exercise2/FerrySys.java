@@ -67,7 +67,7 @@ public class FerrySys implements Ferry
     @Override
     public boolean hasSpaceFor(Vehicle v) {
 
-        return Math.ceil((int)occupiedSpace+v.getSpace()) <= maxSpace && !vehicles.contains(v);
+        return Math.ceil(occupiedSpace+v.getSpace()) <= maxSpace && !vehicles.contains(v);
     }
 
     @Override
