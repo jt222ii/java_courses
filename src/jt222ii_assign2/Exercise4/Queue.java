@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Created by jonastornfors on 2016-09-15.
  */
-public class Queue<E> implements IQueue<E> {
+/*public class Queue<E> implements IQueue<E> {
     private int queueSize = 0;
     E head;
     E tail;
@@ -84,4 +84,4 @@ public class Queue<E> implements IQueue<E> {
             nextElement = qO;
         }
     }
-}
+}*/

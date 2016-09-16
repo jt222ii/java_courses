@@ -1,6 +1,5 @@
 package jt222ii_assign2.Exercise2;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -25,9 +24,13 @@ public class FerrySys implements Ferry
         return passengers.size();
     }
 
+    //As using the field that is a double is way more accurate I have not found a useful function for this
+    //function... implemented it anyway though as the interface has it
+    //Returns the occupiedSpace as an int.
     @Override
     public int countVehicleSpace() {
-        return (int)occupiedSpace;
+        return (int)occupiedSpace;//If it always should round down (39.6 becomes 39)
+        //return (int)Math.round(shortenDouble(occupiedSpace)); //If it always should round up (39.6 becomes 40)
     }
 
     @Override
@@ -46,6 +49,11 @@ public class FerrySys implements Ferry
             vehicles.add(v);
             moneyEarned += v.getBaseCost();
             occupiedSpace += v.getSpace();
+
+            //Because of the problem with double as double can't always represent the number correctly.
+            //(0.2 might become 0.20000000000
+            //I need to shorten the double
+            occupiedSpace = shortenDouble(occupiedSpace);
         }
     }
 
@@ -66,8 +74,7 @@ public class FerrySys implements Ferry
 
     @Override
     public boolean hasSpaceFor(Vehicle v) {
-
-        return Math.ceil(occupiedSpace+v.getSpace()) <= maxSpace && !vehicles.contains(v);
+        return occupiedSpace+v.getSpace() <= maxSpace && !vehicles.contains(v);
     }
 
     @Override
@@ -86,7 +93,7 @@ public class FerrySys implements Ferry
         String string = "Ferry!" +
                 "\nVehicles: "+vehicles.size()+
                 "\nPassengers: "+passengers.size()+"/"+maxPassengers+
-                "\nSpace occupied(rounded down): "+countVehicleSpace()+"/"+maxSpace+
+                "\nSpace occupied: "+occupiedSpace+"/"+maxSpace+
                 "\nIncome: "+moneyEarned+"kr"+
                 "\n___________________________________________\nVehicle Details:";
         ListIterator iterator = new ListIterator();
@@ -114,5 +121,10 @@ public class FerrySys implements Ferry
         {
             return count < vehicles.size();
         }
+    }
+
+    //Used to shorten the double to x.x, shortenDouble(1.39, 2) becomes 1.4
+    public double shortenDouble(double d) {
+        return (double) Math.round(d * 100) / 100;
     }
 }
