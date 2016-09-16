@@ -1,6 +1,5 @@
 package jt222ii_assign2.Exercise4;
 
-import jt222ii_assign2.Exercise1.ArrayIntList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +30,8 @@ public class QueueTest {
             queue.enqueue(i);
         }
         assertEquals(value, queue.size());
+        queue.enqueue(10);
+        assertEquals(value+1, queue.size());
     }
 
     @Test
@@ -46,6 +47,7 @@ public class QueueTest {
     @Test
     public void enqueue() throws Exception {
         Queue queue = new Queue();
+        //Queueing a total amount of 200000 integers. Makes sure the size increases as it should.
         int value = 100000;
         for (int i = 0; i < value; i++)
         {
@@ -57,6 +59,23 @@ public class QueueTest {
             queue.enqueue(i);
         }
         assertEquals(value*2, queue.size()); //size of array should now be 200000
+
+        //Queueing a bunch of different elements. All should work
+        Queue queue2 = new Queue();
+        try
+        {
+            queue2.enqueue("string");
+            queue2.enqueue(new Object());
+            queue2.enqueue(new Queue());
+            queue2.enqueue(1);
+            Object[] oArray = {1,2,3, "jsdak", new Object()};
+            queue2.enqueue(oArray);
+            assertTrue(true);
+        }
+        catch(Exception e)
+        {
+            fail("All elements could not be queued");
+        }
     }
 
     @Test
@@ -83,11 +102,22 @@ public class QueueTest {
 
     @Test
     public void first() throws Exception {
+        Queue queue = new Queue();
+        queue.enqueue(12);
+        assertEquals(12, queue.first());
 
+        queue.enqueue("string");
+        assertNotEquals("string", queue.first());
+        assertEquals(12, queue.first());
     }
 
     @Test
     public void last() throws Exception {
-
+        Queue queue = new Queue();
+        queue.enqueue(12);
+        assertEquals(12, queue.last());
+        queue.enqueue("string");
+        assertNotEquals(12, queue.last());
+        assertEquals("string", queue.last());
     }
 }
