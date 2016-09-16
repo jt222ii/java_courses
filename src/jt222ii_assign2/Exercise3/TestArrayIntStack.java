@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Created by jonastornfors on 2016-09-15.
  */
-public class ArrayIntStackTest {
+public class TestArrayIntStack {
     private static int testNr;
     @Before
     public void setUp() throws Exception {
