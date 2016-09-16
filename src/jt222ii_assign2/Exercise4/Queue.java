@@ -1,6 +1,5 @@
 package jt222ii_assign2.Exercise4;
 
-import java.lang.annotation.ElementType;
 import java.util.Iterator;
 
 /**
@@ -29,7 +28,7 @@ public class Queue<E> implements IQueue<E> {
         }
         else
         {
-            tail.setNext(newObject);
+            tail.next = newObject;
         }
         tail = newObject;
         queueSize++;
@@ -41,8 +40,8 @@ public class Queue<E> implements IQueue<E> {
         {
             throw new IndexOutOfBoundsException("Can't dequeue from the queue when the queue is empty!");
         }
-        E dequeuedElement = head.getElement();
-        head = head.getNext();
+        E dequeuedElement = head.element;
+        head = head.next;
         queueSize--;
         return dequeuedElement;
     }
@@ -53,7 +52,7 @@ public class Queue<E> implements IQueue<E> {
         {
             throw new IndexOutOfBoundsException("Can't get first element of the queue when the queue is empty!");
         }
-        return head.getElement();
+        return head.element;
     }
 
     @Override
@@ -62,7 +61,7 @@ public class Queue<E> implements IQueue<E> {
         {
             throw new IndexOutOfBoundsException("Can't get last element of the queue when the queue is empty!");
         }
-        return tail.getElement();
+        return tail.element;
     }
 
     @Override
@@ -78,7 +77,7 @@ public class Queue<E> implements IQueue<E> {
                 throw new IndexOutOfBoundsException("Can't get next value when there is no next value!");
             }
             E element = qO.element;//element to return
-            qO = qO.getNext();//sets qO to the next queueobject
+            qO = qO.next;//sets qO to the next queueobject
             return element;
         }
 
@@ -91,27 +90,12 @@ public class Queue<E> implements IQueue<E> {
 
     private class QueueObject //the QueueObject class is used to create QueueObjects containing the object and the next QueueObject
     {
-        private QueueObject next;
-        private E element;
+        QueueObject next;
+        E element;
 
         public QueueObject(E e)
         {
             element = e;
-        }
-
-        public E getElement()//returns the object
-        {
-            return element;
-        }
-
-        public QueueObject getNext()//returns the next QueueObject
-        {
-            return next;
-        }
-
-        public void setNext(QueueObject qO)//sets the next QueueObject
-        {
-            next = qO;
         }
     }
 }
