@@ -2,6 +2,7 @@ package jt222ii_assign2.Exercise5;
 
 import java.nio.file.Files;
 import java.io.File;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 /**
  * Created by jonastornfors on 2016-09-19.
@@ -16,7 +17,7 @@ public class IdentifyWordsMain {
     public static void main(String args[])
     {
         IdentifyWordsMain idWMain = new IdentifyWordsMain();
-        idWMain.readFile("/Users/jonastornfors/Documents/Github/java_courses/src/jt222ii_assign2/Exercise5/HistoryOfProgramming.txt");
+        idWMain.readFile(args[0]);
     }
 
     public void readFile(String path)
@@ -38,8 +39,19 @@ public class IdentifyWordsMain {
 
             }
         }
-        File file = new File(IdentifyWordsMain.class.getProtectionDomain().getCodeSource().getLocation().getPath(), "words.txt");
-        file.mkdir();
-        System.out.println(contentWithoutNumbers);
+        File dir = f.getParentFile();
+        Path newFilePath = Paths.get(dir.getPath()+"/words.txt");
+        try
+        {
+            if(!new File(newFilePath.toString()).isFile()) {
+                Files.createFile(newFilePath);
+            }
+            Files.write(newFilePath, contentWithoutNumbers.getBytes());
+            System.out.println("File words.txt created!");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 }
