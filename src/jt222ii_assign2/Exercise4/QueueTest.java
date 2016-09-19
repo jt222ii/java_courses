@@ -60,6 +60,14 @@ public class QueueTest {
         }
         assertEquals(value*2, queue.size()); //size of array should now be 200000
 
+
+        //Checking first and last element
+        //first element
+        assertEquals(0, queue.first());
+        //Last element
+        queue.enqueue("newLastElement");
+        assertEquals("newLastElement", queue.last());
+
         //Queueing a bunch of different elements. All should work
         Queue queue2 = new Queue();
         try
@@ -70,6 +78,7 @@ public class QueueTest {
             queue2.enqueue(1);
             Object[] oArray = {1,2,3, "jsdak", new Object()};
             queue2.enqueue(oArray);
+            queue2.enqueue(true);
             assertTrue(true);
         }
         catch(Exception e)
