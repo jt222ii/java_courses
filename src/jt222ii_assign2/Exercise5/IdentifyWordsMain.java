@@ -16,6 +16,10 @@ public class IdentifyWordsMain {
 
     public static void main(String args[])
     {
+        if(args.length < 1)
+        {
+            throw new IllegalArgumentException("Please set arguments for the method.");
+        }
         IdentifyWordsMain idWMain = new IdentifyWordsMain();
         idWMain.readFile(args[0]);
     }
