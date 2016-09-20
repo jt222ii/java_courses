@@ -36,7 +36,7 @@ public class IdentifyWordsMain {
             }
             catch(Exception e)
             {
-
+                System.err.println(e.getMessage());
             }
         }
         File dir = f.getParentFile();
@@ -51,7 +51,7 @@ public class IdentifyWordsMain {
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 }

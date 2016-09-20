@@ -83,7 +83,7 @@ public class QueueTest {
         }
         catch(Exception e)
         {
-            fail("All elements could not be queued");
+            fail("Enqueue: All elements could not be queued");
         }
     }
 

@@ -24,8 +24,6 @@ public class FerrySys implements Ferry
         return passengers.size();
     }
 
-    //As using the field that is a double is way more accurate I have not found a useful function for this
-    //function... implemented it anyway though as the interface has it
     //Returns the occupiedSpace as an int.
     @Override
     public int countVehicleSpace() {
