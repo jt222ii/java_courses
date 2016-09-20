@@ -1,7 +1,5 @@
 package jt222ii_assign2.Exercise1;
 
-import java.util.Iterator;
-
 /**
  * Created by jonastornfors on 2016-09-13.
  */
