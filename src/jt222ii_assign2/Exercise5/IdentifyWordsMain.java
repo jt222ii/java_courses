@@ -1,8 +1,8 @@
 package jt222ii_assign2.Exercise5;
 
+import java.io.FileWriter;
 import java.nio.file.Files;
 import java.io.File;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 /**
  * Created by jonastornfors on 2016-09-19.
@@ -43,14 +43,13 @@ public class IdentifyWordsMain {
                 System.err.println(e.getMessage());
             }
         }
-        File dir = f.getParentFile();
-        Path newFilePath = Paths.get(dir.getPath()+"/words.txt");
+        String newPath = f.getParentFile().getPath()+"/words.txt";
         try
         {
-            if(!new File(newFilePath.toString()).isFile()) {
-                Files.createFile(newFilePath);
-            }
-            Files.write(newFilePath, contentWithoutNumbers.getBytes());
+            FileWriter writer = new FileWriter(newPath);
+            writer.write(contentWithoutNumbers);
+            writer.flush();
+            writer.close();
             System.out.println("File words.txt created!");
         }
         catch(Exception e)

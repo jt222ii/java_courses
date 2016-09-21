@@ -33,7 +33,6 @@ public class WordCount1Main {
             scanner.close();
             System.out.println("HashSet size: "+wordHashSet.size());
             System.out.println("TreeSet size: "+wordTreeSet.size());
-
             //Treeset should be ordered
             Iterator iterator = wordTreeSet.iterator();
             while(iterator.hasNext())
