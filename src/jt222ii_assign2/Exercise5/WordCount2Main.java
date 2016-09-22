@@ -4,16 +4,11 @@ import java.io.File;
 import java.util.*;
 
 /**
- * Created by jonastornfors on 2016-09-20.
+ * Created by jonastornfors on 2016-09-22.
  */
-public class WordCount1Main {
+public class WordCount2Main {
 
-    private static Set<Word> wordHashSet = new HashSet();
-    private static Set<Word> wordTreeSet = new TreeSet();
-
-    /*For each word in word.txt: 1) Create a Word object, and add it to 2) a HashSet
-    and 3) a TreeSet. The size of the two sets should be the number of different words in
-    word.txt. Iteration over TreeSet should give words in alphabetical order.*/
+    private static TreeWordSet treeSet = new TreeWordSet();
     public static void main(String args[])
     {
         if(args.length < 1)
@@ -29,18 +24,17 @@ public class WordCount1Main {
             while(scanner.hasNext())
             {
                 Word word = new Word(scanner.next());
-                wordHashSet.add(word);
-                wordTreeSet.add(word);
+                treeSet.add(word);
             }
             scanner.close();
-            System.out.println("HashSet size: "+wordHashSet.size());
-            System.out.println("TreeSet size: "+wordTreeSet.size());
-            //Treeset should be ordered
-            Iterator iterator = wordTreeSet.iterator();
+            Iterator iterator = treeSet.iterator();
+            int count = 0;
             while(iterator.hasNext())
             {
+                count++;
                 System.out.println(iterator.next());
             }
+            System.out.println("TreeSet size: "+treeSet.size+" count: "+count);
         }
         catch(Exception e)
         {
