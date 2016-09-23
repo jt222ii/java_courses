@@ -9,32 +9,28 @@ import java.nio.file.Paths;
  */
 public class IdentifyWordsMain {
 
-    public IdentifyWordsMain()
-    {
-
-    }
-
     public static void main(String args[])
     {
         if(args.length < 1)
         {
             throw new IllegalArgumentException("Please set arguments for the method.");
         }
-        IdentifyWordsMain idWMain = new IdentifyWordsMain();
-        idWMain.readFile(args[0]);
+        readFile(args[0]);
     }
 
-    public void readFile(String path)
+    public static void readFile(String path)
     {
         String contentWithoutNumbers = "";
         File f = new File(path);
-        if(f.exists() && !f.isDirectory()) {
+        if(f.exists() && !f.isDirectory()) //if file exists and is not a directory
+        {
             try {
-                String text = new String(Files.readAllBytes(Paths.get(path)));
-                for (char c : text.toCharArray()) {
+                String text = new String(Files.readAllBytes(Paths.get(path)));//read all bytes and add them to a string
+                for (char c : text.toCharArray()) //for each char in the text
+                {
                     if(Character.isLetter(c) || Character.isWhitespace(c))
                     {
-                        contentWithoutNumbers += c;
+                        contentWithoutNumbers += c; //add all letters and whitespaces
                     }
                 }
             }
@@ -43,11 +39,11 @@ public class IdentifyWordsMain {
                 System.err.println(e.getMessage());
             }
         }
-        String newPath = f.getParentFile().getPath()+"/words.txt";
+        String newPath = f.getParentFile().getPath()+"/words.txt";//get the parent of the read file and put the new file in the same path
         try
         {
             FileWriter writer = new FileWriter(newPath);
-            writer.write(contentWithoutNumbers);
+            writer.write(contentWithoutNumbers);//write the new content to the file
             writer.flush();
             writer.close();
             System.out.println("File words.txt created!");

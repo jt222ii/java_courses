@@ -22,15 +22,15 @@ public class Queue<E> implements IQueue<E> {
     @Override
     public void enqueue(E element) {
         QueueObject newObject = new QueueObject(element);
-        if(queueSize == 0)
+        if(queueSize == 0)//if queue was empty the new object should be head
         {
             head = newObject;
         }
-        else
+        else//else set it to the next object of the current tail
         {
             tail.next = newObject;
         }
-        tail = newObject;
+        tail = newObject;//new object should be the new tail
         queueSize++;
     }
 
@@ -40,8 +40,8 @@ public class Queue<E> implements IQueue<E> {
         {
             throw new IndexOutOfBoundsException("Can't dequeue from the queue when the queue is empty!");
         }
-        E dequeuedElement = head.element;
-        head = head.next;
+        E dequeuedElement = head.element; //dequeue the first element
+        head = head.next;//new head is the former heads next
         queueSize--;
         return dequeuedElement;
     }

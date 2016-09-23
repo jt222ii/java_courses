@@ -12,7 +12,7 @@ public class Word implements Comparable<Word> {
         return word;
     }
     /* Override Object methods */
-    public int hashCode()
+    public int hashCode()//returns the hash value of the word
     {
         String lowerCaseWord = word.toLowerCase();
         //"compute a hash value for word"
@@ -24,22 +24,19 @@ public class Word implements Comparable<Word> {
         }
         return hc;
     }
-    public boolean equals(Object other)
+    public boolean equals(Object other)//Checks if the words are equal.
     {
-        //"true if two words are equal"
-        //använd equals
         if(other instanceof Word)
         {
             Word otherWord = (Word)other;
-            return word.toLowerCase().equals(otherWord.word.toLowerCase());
+            return word.toLowerCase().equals(otherWord.word.toLowerCase()); //compare the two words. Making them both lowercase as it should not be case sensitive
         }
         return false;
 
     }
     /* Implement Comparable */
-    public int compareTo(Word w)
+    public int compareTo(Word w)//compares the two words
     {
-       // "compares two words lexicographically"
         return word.compareToIgnoreCase(w.word);
     }
 }

@@ -8,7 +8,19 @@ import java.util.NoSuchElementException;
  */
 public class TreeWordSet implements WordSet {
     Node headNode;
-    int size = 0;
+    static int size = 0;
+
+    @Override
+    public String toString()
+    {
+        String string = "";
+        Iterator iterator = iterator();
+        while(iterator.hasNext())
+        {
+            string += iterator.next().toString() + ", ";
+        }
+        return string;
+    }
 
     @Override
     public void add(Word word) {
@@ -16,6 +28,7 @@ public class TreeWordSet implements WordSet {
         if(headNode == null)
         {
             headNode = n;
+            size++;
         }
         else if(!contains(word))
         {
@@ -60,7 +73,6 @@ public class TreeWordSet implements WordSet {
             Node toReturn = next;
             if (next.right == null)
             {
-
                 Node currentNode = next;
                 while (currentNode.parent != null && currentNode == currentNode.parent.right) {
                     currentNode = currentNode.parent;
@@ -83,20 +95,25 @@ public class TreeWordSet implements WordSet {
 
     private class Node
     {
-        public Node left = null, right = null, parent = null;
-        Word value;
+        private Node left = null, right = null, parent = null;
+        private Word value;
         public Node(Word w)
         {
             value = w;
         }
 
+        private Word Value()
+        {
+            return value;
+        }
+
         private boolean contains(Word w)
         {
-            if(value.compareTo(w) == 0)
+            if(w.compareTo(value) == 0)
             {
                 return true;
             }
-            else if(value.compareTo(w) < 0)
+            else if(w.compareTo(value) < 0)
             {
                 if(left == null)
                 {
@@ -107,7 +124,7 @@ public class TreeWordSet implements WordSet {
                     return left.contains(w);
                 }
             }
-            else if(value.compareTo(w) > 0)
+            else if(w.compareTo(value) > 0)
             {
                 if(right == null)
                 {
@@ -123,7 +140,6 @@ public class TreeWordSet implements WordSet {
 
         private void add(Word w)
         {
-            //System.out.println(value.compareTo(w));
             if(w.compareTo(value) < 0)
             {
                 if(left == null)

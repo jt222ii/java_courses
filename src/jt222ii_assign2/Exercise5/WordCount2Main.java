@@ -9,6 +9,7 @@ import java.util.*;
 public class WordCount2Main {
 
     private static TreeWordSet treeSet = new TreeWordSet();
+    private static HashWordSet hashSet = new HashWordSet();
     public static void main(String args[])
     {
         if(args.length < 1)
@@ -21,20 +22,19 @@ public class WordCount2Main {
             System.out.println(args[0]);
             Scanner scanner = new Scanner(new File(args[0]));
 
-            while(scanner.hasNext())
+            while(scanner.hasNext())//add all the words to the sets
             {
                 Word word = new Word(scanner.next());
                 treeSet.add(word);
+                hashSet.add(word);
             }
             scanner.close();
             Iterator iterator = treeSet.iterator();
-            int count = 0;
-            while(iterator.hasNext())
+            while(iterator.hasNext())//printing out all the words in treeset. Should be printed in alphabetical order
             {
-                count++;
                 System.out.println(iterator.next());
             }
-            System.out.println("TreeSet size: "+treeSet.size+" count: "+count);
+            System.out.println("TreeSet size: "+treeSet.size()+" HashSet size: "+hashSet.size());
         }
         catch(Exception e)
         {

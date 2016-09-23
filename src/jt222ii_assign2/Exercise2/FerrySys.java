@@ -65,6 +65,7 @@ public class FerrySys implements Ferry
 
     @Override
     public void disembark() {
+        //clear the ferry and set the occupiedspace to 0
         passengers.clear();
         vehicles.clear();
         occupiedSpace = 0;
@@ -72,6 +73,7 @@ public class FerrySys implements Ferry
 
     @Override
     public boolean hasSpaceFor(Vehicle v) {
+        //occupied space + vehicles space should be less than max space if it wants to be added. Should also not already be embarked
         return occupiedSpace+v.getSpace() <= maxSpace && !vehicles.contains(v);
     }
 
@@ -86,7 +88,7 @@ public class FerrySys implements Ferry
     }
 
     @Override
-    public String toString()
+    public String toString()//returns a neat string with ferry information
     {
         String string = "Ferry!" +
                 "\nVehicles: "+vehicles.size()+

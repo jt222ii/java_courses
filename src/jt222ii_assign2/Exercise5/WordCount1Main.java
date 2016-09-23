@@ -26,7 +26,7 @@ public class WordCount1Main {
             System.out.println(args[0]);
             Scanner scanner = new Scanner(new File(args[0]));
 
-            while(scanner.hasNext())
+            while(scanner.hasNext())//add the words to the sets
             {
                 Word word = new Word(scanner.next());
                 wordHashSet.add(word);
@@ -37,7 +37,7 @@ public class WordCount1Main {
             System.out.println("TreeSet size: "+wordTreeSet.size());
             //Treeset should be ordered
             Iterator iterator = wordTreeSet.iterator();
-            while(iterator.hasNext())
+            while(iterator.hasNext())//print out the words in tree. Should be alphabetical
             {
                 System.out.println(iterator.next());
             }
