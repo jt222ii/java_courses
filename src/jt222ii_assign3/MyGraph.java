@@ -8,9 +8,17 @@ import java.util.*;
  * Created by jonastornfors on 2016-09-27.
  */
 public class MyGraph<E> implements graphs.DirectedGraph<E>{
-    private Map<E, MyNode<E>> item2node = new HashMap<>();
-    private Set<MyNode<E>> heads = new HashSet<>();
-    private Set<MyNode<E>> tails = new HashSet<>();
+    private Map<E, MyNode<E>> item2node;
+    private Set<Node<E>> heads;
+    private Set<Node<E>> tails;
+
+    public MyGraph()
+    {
+        item2node = new HashMap<>();
+        heads = new HashSet<>();
+        tails = new HashSet<>();
+    }
+
     /**
      * Adds a node representing <tt>item</tt> if not added before.
      * Exception is thrown if <tt>item</tt> is null. It returns the
@@ -109,15 +117,55 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
         return item2node.size();
     }
 
+    /**
+     * Returns an iterator over all nodes in the graph.
+     * @return graph nodes iterator
+     */
     @Override
     public Iterator<Node<E>> iterator() {
-        return null;
+        return new item2nodeiterator();
+    }
+
+    private class item2nodeiterator implements Iterator<Node<E>>
+    {
+        int index = 0;
+        Object[] nodeArray = item2node.keySet().toArray();
+        @Override
+        public boolean hasNext() {
+            return index < item2node.size();
+        }
+
+        @Override
+        public Node<E> next() {
+            MyNode<E> node = item2node.get(nodeArray[index]);
+            index++;
+            return node;
+        }
     }
 
     @Override
     public Iterator<Node<E>> heads() {
-        return null;
+        //return heads.iterator();
+        return new headsIterator();
     }
+    @SuppressWarnings("unchecked cast")
+    private class headsIterator implements Iterator<Node<E>>
+    {
+        int index = 0;
+        Object[] nodeArray = heads.toArray();
+        @Override
+        public boolean hasNext() {
+            return index < heads.size();
+        }
+
+        @Override
+        public Node<E> next() {
+            Node<E> node = (Node<E>)nodeArray[index];
+            index++;
+            return node;
+        }
+    }
+
     /**
      * The number of nodes with no in-edges.
      * @return number of head nodes.
@@ -129,7 +177,26 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
 
     @Override
     public Iterator<Node<E>> tails() {
-        return null;
+        //return tails.iterator();
+        return new tailsIterator();
+    }
+
+    private class tailsIterator implements Iterator<Node<E>>
+    {
+        int index = 0;
+        Object[] nodeArray = tails.toArray();
+
+        @Override
+        public boolean hasNext() {
+            return index < tails.size();
+        }
+
+        @Override
+        public Node<E> next() {
+            Node<E> node = (Node<E>)nodeArray[index];
+            index++;
+            return node;
+        }
     }
 
     /**
@@ -143,7 +210,7 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
 
     @Override
     public List<E> allItems() {
-        return null;
+        return new ArrayList<E>(item2node.keySet());
     }
 
     /**
@@ -169,12 +236,22 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
      */
     @Override
     public void removeNodeFor(E item) {
-        if(item == null || !item2node.containsKey(item))
+        if(item == null || !containsNodeFor(item))
         {
             throw new RuntimeException("Input was null or item does not already exist!");
         }
         //remove from predecessor/successor
-        //item2node.remove(item);
+        MyNode<E> node = item2node.get(item);
+        node.disconnect();
+        if(node.isHead())
+        {
+            heads.remove(node);
+        }
+        if(node.isTail())
+        {
+            tails.remove(node);
+        }
+        item2node.remove(item);
     }
 
     /**
@@ -198,8 +275,43 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
 
     }
 
+    /**
+     * Removes the edge between the nodes represented
+     * by <tt>from</tt> and <tt>to</tt> if it exist.
+     * Returns <tt>true</tt> if an edge between the nodes represented
+     * by <tt>from</tt> and <tt>to</tt>  is found and successfully removed.
+     * Exception is thrown if <tt>from</tt> or <tt>to</tt> is null.
+     * @param from, source node item
+     * @param to, target node item
+     * @return <tt>true</tt> if edge in graph and successfully removed, otherwise <tt>false</tt>.
+     */
     @Override
     public boolean removeEdgeFor(E from, E to) {
+        if(from == null || to == null)
+        {
+            throw new RuntimeException("Received null as input");
+        }
+        if(!containsNodeFor(from) || !containsNodeFor(to))
+        {
+            return false;
+        }
+
+        MyNode<E> source = item2node.get(from);
+        MyNode<E> target = item2node.get(to);
+
+        if(source.hasSucc(target)) {
+            source.removeSucc(target);
+            target.removePred(source);
+            if(source.outDegree() == 0)
+            {
+                tails.add(source);
+            }
+            if(target.inDegree() == 0)
+            {
+                heads.add(target);
+            }
+            return true;
+        }
         return false;
     }
 
@@ -210,11 +322,29 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
      */
     @Override
     public String toString() {
-        String str = "";
+
+        String str = "graph [\n";
         for(MyNode<E> node : item2node.values())
         {
-            str += node.toString() + " ";
+            str += "node [\n";
+            str += "\tid "+node+"\n";
+            str += "\tlabel "+node+"\n";
+            str += "]\n";
         }
+        for(MyNode<E> node : item2node.values())
+        {
+            Iterator succIt = node.succsOf();
+            while(succIt.hasNext())
+            {
+                Node target = (Node)succIt.next();
+                str += "edge [ \n";
+                str += "\tsource "+node+"\n";
+                str += "\tsource "+target+"\n";
+                str += "\tlabel \"edge from node "+node+" to node "+target+"\"\n";
+                str += "]\n";
+            }
+        }
+
         return str;
     }
 }

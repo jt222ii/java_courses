@@ -48,7 +48,7 @@ public class MyNode<E> extends graphs.Node<E> {
      */
     @Override
     public Iterator<Node<E>> succsOf() {
-        return null;
+        return successors.iterator();
     }
 
     /**
@@ -79,8 +79,9 @@ public class MyNode<E> extends graphs.Node<E> {
      */
     @Override
     public Iterator<Node<E>> predsOf() {
-        return null;
+        return predecessors.iterator();
     }
+
 
     /**
      * Adds node <tt>succ</tt> as a successor to <tt>this</tt> node.
@@ -94,7 +95,7 @@ public class MyNode<E> extends graphs.Node<E> {
      */
     @Override
     protected void removeSucc(Node succ) {
-
+        successors.remove(succ);
     }
     /**
      * Adds node <tt>pred</tt> as a predecessor to <tt>this</tt> node.
@@ -108,7 +109,7 @@ public class MyNode<E> extends graphs.Node<E> {
      */
     @Override
     protected void removePred(Node pred) {
-
+        predecessors.remove(pred);
     }
     /**
      * Disconnects this node from all adjacent nodes. That is, removes all successor,
@@ -116,6 +117,17 @@ public class MyNode<E> extends graphs.Node<E> {
      */
     @Override
     protected void disconnect() {
-
+        for(Node<E> n : predecessors)
+        {
+            MyNode<E> node = (MyNode<E>)n;
+            node.removeSucc(this);
+        }
+        for(Node<E> n : successors)
+        {
+            MyNode<E> node = (MyNode<E>)n;
+            node.removePred(this);
+        }
+        predecessors.clear();
+        successors.clear();
     }
 }
