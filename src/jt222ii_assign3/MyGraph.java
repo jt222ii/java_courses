@@ -145,7 +145,7 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
 
     @Override
     public Iterator<Node<E>> heads() {
-        //return heads.iterator();
+        //can also use heads.iterator() but I decided to create my own
         return new headsIterator();
     }
     @SuppressWarnings("unchecked cast")
@@ -177,7 +177,7 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
 
     @Override
     public Iterator<Node<E>> tails() {
-        //return tails.iterator();
+        //can also use tails.iterator() but I decided to create my own
         return new tailsIterator();
     }
 
@@ -193,7 +193,7 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
 
         @Override
         public Node<E> next() {
-            Node<E> node = (Node<E>)nodeArray[index];
+            Node<E> node = (Node<E>)nodeArray[index++];
             index++;
             return node;
         }
@@ -321,15 +321,16 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
      *
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
 
         String str = "graph [\n";
         for(MyNode<E> node : item2node.values())
         {
-            str += "node [\n";
-            str += "\tid "+node+"\n";
-            str += "\tlabel "+node+"\n";
-            str += "]\n";
+            str += "\tnode [\n";
+            str += "\t\tid "+node+"\n";
+            str += "\t\tlabel "+node+"\n";
+            str += "\t]\n";
         }
         for(MyNode<E> node : item2node.values())
         {
@@ -337,13 +338,14 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
             while(succIt.hasNext())
             {
                 Node target = (Node)succIt.next();
-                str += "edge [ \n";
-                str += "\tsource "+node+"\n";
-                str += "\tsource "+target+"\n";
-                str += "\tlabel \"edge from node "+node+" to node "+target+"\"\n";
-                str += "]\n";
+                str += "\tedge [ \n";
+                str += "\t\tsource "+node+"\n";
+                str += "\t\tsource "+target+"\n";
+                str += "\t\tlabel \"edge from node "+node+" to node "+target+"\"\n";
+                str += "\t]\n";
             }
         }
+        str += "]\n";
 
         return str;
     }

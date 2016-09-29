@@ -10,8 +10,8 @@ import java.util.Set;
  * Created by jonastornfors on 2016-09-27.
  */
 public class MyNode<E> extends graphs.Node<E> {
-    private Set<Node<E>> predecessors = new HashSet();
-    private Set<Node<E>> successors = new HashSet();
+    private Set<Node<E>> predecessors = new HashSet<>();
+    private Set<Node<E>> successors = new HashSet<>();
     /**
      * Constructs a new node using <tt>item</tt> as key.
      *
@@ -48,7 +48,26 @@ public class MyNode<E> extends graphs.Node<E> {
      */
     @Override
     public Iterator<Node<E>> succsOf() {
-        return successors.iterator();
+        //can also use successors.iterator() but I decided to create my own
+        return new succsIterator();
+    }
+
+    @SuppressWarnings("unchecked cast")
+    private class succsIterator implements Iterator<Node<E>>
+    {
+        int index = 0;
+        Object[] nodeArray = successors.toArray();
+        @Override
+        public boolean hasNext() {
+            return index < successors.size();
+        }
+
+        @Override
+        public Node<E> next() {
+            Node<E> node = (Node<E>)nodeArray[index];
+            index++;
+            return node;
+        }
     }
 
     /**
@@ -79,9 +98,27 @@ public class MyNode<E> extends graphs.Node<E> {
      */
     @Override
     public Iterator<Node<E>> predsOf() {
-        return predecessors.iterator();
+        //can also use predecessors.iterator() but I decided to create my own
+        return new predsIterator();
     }
 
+    @SuppressWarnings("unchecked cast")
+    private class predsIterator implements Iterator<Node<E>>
+    {
+        int index = 0;
+        Object[] nodeArray = predecessors.toArray();
+        @Override
+        public boolean hasNext() {
+            return index < predecessors.size();
+        }
+
+        @Override
+        public Node<E> next() {
+            Node<E> node = (Node<E>)nodeArray[index];
+            index++;
+            return node;
+        }
+    }
 
     /**
      * Adds node <tt>succ</tt> as a successor to <tt>this</tt> node.
