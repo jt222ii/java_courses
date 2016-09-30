@@ -34,9 +34,9 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
         }
         if(!item2node.containsKey(item)) {
             MyNode<E> node = new MyNode<>(item);
-            item2node.put(item, node);
             tails.add(node);
             heads.add(node);
+            item2node.put(item, node);
             return node;
         }
         else

@@ -164,7 +164,8 @@ public class MyNode<E> extends graphs.Node<E> {
             MyNode<E> node = (MyNode<E>)n;
             node.removePred(this);
         }
-        predecessors.clear();
-        successors.clear();
+        if(hasReflexiveEdges()) {
+            removeReflexiveEdges();
+        }
     }
 }
