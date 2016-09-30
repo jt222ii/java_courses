@@ -111,7 +111,6 @@ public class MyDFS<E> implements graphs.DFS<E> {
             }
         }
         return false;
-
     }
 
 
@@ -133,19 +132,6 @@ public class MyDFS<E> implements graphs.DFS<E> {
         return list;
     }
 
-    private void topoSort(Node<E> root, List<Node<E>> list, List<Node<E>> visited)
-    {
-        if(!visited.contains(root)) {
-            visited.add(root);
-            Iterator<Node<E>> it = root.predsOf();
-            while (it.hasNext()) {
-                topoSort(it.next(), list, visited);
-            }
-            root.num = list.size();
-            list.add(root);
-        }
-    }
-
     private void dfs(Node<E> root, List<Node<E>> list)
     {
         if(!list.contains(root)) {
@@ -165,6 +151,19 @@ public class MyDFS<E> implements graphs.DFS<E> {
             Iterator<Node<E>> it = root.succsOf();
             while (it.hasNext()) {
                 postOrder(it.next(), list, visited);
+            }
+            root.num = list.size();
+            list.add(root);
+        }
+    }
+
+    private void topoSort(Node<E> root, List<Node<E>> list, List<Node<E>> visited)
+    {
+        if(!visited.contains(root)) {
+            visited.add(root);
+            Iterator<Node<E>> it = root.predsOf();
+            while (it.hasNext()) {
+                topoSort(it.next(), list, visited);
             }
             root.num = list.size();
             list.add(root);
