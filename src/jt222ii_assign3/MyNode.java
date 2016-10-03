@@ -49,6 +49,7 @@ public class MyNode<E> extends graphs.Node<E> {
     @Override
     public Iterator<Node<E>> succsOf() {
         //can also use successors.iterator() but I decided to create my own
+        //return successors.iterator();
         return new succsIterator();
     }
 
