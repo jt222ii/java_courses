@@ -210,7 +210,7 @@ public class MyGraph<E> implements graphs.DirectedGraph<E>{
 
     @Override
     public List<E> allItems() {
-        return new ArrayList<E>(item2node.keySet());
+        return new ArrayList<>(item2node.keySet());
     }
 
     /**

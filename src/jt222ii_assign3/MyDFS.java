@@ -3,16 +3,15 @@ package jt222ii_assign3;
 import graphs.DirectedGraph;
 import graphs.Node;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by jonastornfors on 2016-09-27.
  */
 public class MyDFS<E> implements graphs.DFS<E> {
 
+    private ArrayList<Node<E>> list = new ArrayList<>();//kan denna bytas mot en linkedhashmap kanske?
+    private Set<Node<E>> visited = new HashSet<>(); // this is used even in the function that could use list.contains instead because contains in hashset is much faster
     /**
      * Returns the nodes visited by a depth first search starting from
      * the given root node. Each visited node is also attached with
@@ -21,8 +20,9 @@ public class MyDFS<E> implements graphs.DFS<E> {
     @Override
     public List<Node<E>> dfs(DirectedGraph<E> graph, Node<E> root)
     {
-        ArrayList<Node<E>> list = new ArrayList<>();
-        dfs(root, list);
+        list.clear();
+        visited.clear();
+        dfs(root);
         return list;
     }
 
@@ -34,9 +34,23 @@ public class MyDFS<E> implements graphs.DFS<E> {
     @Override
     public List<Node<E>> dfs(DirectedGraph<E> graph)
     {
-        ArrayList<Node<E>> list = new ArrayList<>();
+        list.clear();
+        visited.clear();//dsahgdahjs
+        //Outcommented code does not seem to work. It was added later. It works in the tests but not in the benchmark..
+        /*if(graph.headCount() != 0)
+        {
+            Iterator<Node<E>> headItr = graph.heads();
+            while(headItr.hasNext())
+            {
+                dfs(headItr.next());
+            }
+        }
+        else
+        {
+            dfs(graph.getNodeFor(graph.allItems().get(0)));
+        }*/
         for (E item:graph.allItems()) {
-            dfs(graph.getNodeFor(item), list);
+            dfs(graph.getNodeFor(item));
         }
         return list;
     }
@@ -53,9 +67,9 @@ public class MyDFS<E> implements graphs.DFS<E> {
      */
     @Override
     public List<Node<E>> postOrder(DirectedGraph<E> g, Node<E> root) {
-        ArrayList<Node<E>> list = new ArrayList<>();
-        ArrayList<Node<E>> visited = new ArrayList<>();
-        postOrder(root, list, visited);
+        list.clear();
+        visited.clear();
+        postOrder(root);
         return list;
     }
 
@@ -69,11 +83,23 @@ public class MyDFS<E> implements graphs.DFS<E> {
      */
     @Override
     public List<Node<E>> postOrder(DirectedGraph<E> g) {
-        ArrayList<Node<E>> list = new ArrayList<>();
-        ArrayList<Node<E>> visited = new ArrayList<>();
-        for (E item:g.allItems()) {
-            postOrder(g.getNodeFor(item), list, visited);
+        list.clear();
+        visited.clear();
+        if(g.headCount() != 0)
+        {
+            Iterator<Node<E>> headItr = g.heads();
+            while(headItr.hasNext())
+            {
+                postOrder(headItr.next());
+            }
         }
+        else
+        {
+            postOrder(g.getNodeFor(g.allItems().get(0)));
+        }
+        /*for (E item:g.allItems()) {
+            postOrder(g.getNodeFor(item), list, visited);
+        }*/
         return list;
     }
 
@@ -121,52 +147,52 @@ public class MyDFS<E> implements graphs.DFS<E> {
      */
     @Override
     public List<Node<E>> topSort(DirectedGraph<E> graph) {
+        list.clear();
+        visited.clear();
         if(isCyclic(graph)) {
             return null;
         }
-        ArrayList<Node<E>> list = new ArrayList<>();
-        ArrayList<Node<E>> visited = new ArrayList<>();
         for (E item:graph.allItems()) {
-            topoSort(graph.getNodeFor(item), list, visited);
+            topoSort(graph.getNodeFor(item));
         }
         return list;
     }
 
-    private void dfs(Node<E> root, List<Node<E>> list)
+    private void dfs(Node<E> root)
     {
-        if(!list.contains(root)) {
+        if(!visited.contains(root)) {
             root.num = list.size();
             list.add(root);
+            visited.add(root);
             Iterator<Node<E>> it = root.succsOf();
             while (it.hasNext()) {
-                dfs(it.next(), list);
+                dfs(it.next());
             }
         }
     }
 
-    private void postOrder(Node<E> root, ArrayList<Node<E>> list, ArrayList<Node<E>> visited)
+    private void postOrder(Node<E> root)
     {
         if(!visited.contains(root)) {
             visited.add(root);
             Iterator<Node<E>> it = root.succsOf();
             while (it.hasNext()) {
-                postOrder(it.next(), list, visited);
+                postOrder(it.next());
             }
-            root.num = list.size();
+            root.num = list.size()+1;
             list.add(root);
         }
     }
 
-    private void topoSort(Node<E> root, List<Node<E>> list, List<Node<E>> visited)
-    {
-        if(!visited.contains(root)) {
-            visited.add(root);
-            Iterator<Node<E>> it = root.predsOf();
-            while (it.hasNext()) {
-                topoSort(it.next(), list, visited);
-            }
-            root.num = list.size();
-            list.add(root);
+    private void topoSort(Node<E> root) {
+        postOrder(root);
+        int x = 0;
+        int y = list.size()-1;
+        while (x < y) {
+            Node<E> temp = list.get(x);
+            list.set( x, list.get(y));
+            list.set( y, temp);
+            x++; y--;
         }
     }
 }
