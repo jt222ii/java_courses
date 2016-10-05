@@ -9,6 +9,9 @@ import java.util.*;
  * Created by jonastornfors on 2016-09-27.
  */
 public class MyBFS<E> implements graphs.BFS<E> {
+
+    private ArrayList<Node<E>> list = new ArrayList<>();
+    private Set<Node<E>> visited = new HashSet<>();
     /**
      * Returns the nodes visited by a breadth-first search starting from
      * the given root node. Each visited node is also attached with
@@ -16,11 +19,11 @@ public class MyBFS<E> implements graphs.BFS<E> {
      */
     @Override
     public List<Node<E>> bfs(DirectedGraph<E> graph, Node<E> root) {
-        ArrayList<Node<E>> visited = new ArrayList<>();
-        ArrayList<Node<E>> list = new ArrayList<>();
+        list.clear();
+        visited.clear();
         Set<Node<E>> set = new LinkedHashSet<>();
         set.add(root);
-        bfs(set, list, visited);
+        bfs(set);
         return list;
     }
 
@@ -31,17 +34,17 @@ public class MyBFS<E> implements graphs.BFS<E> {
      */
     @Override
     public List<Node<E>> bfs(DirectedGraph<E> graph) {
-        ArrayList<Node<E>> visited = new ArrayList<>();
-        ArrayList<Node<E>> list = new ArrayList<>();
-        Set<Node<E>> set = new LinkedHashSet<>();
+        list.clear();
+        visited.clear();
+        Set<Node<E>> set = new HashSet<>();
         for (E item:graph.allItems()) {
             set.add(graph.getNodeFor(item));
         }
-        bfs(set, list, visited);
+        bfs(set);
         return list;
     }
 
-    public void bfs(Set<Node<E>> set, ArrayList<Node<E>> list, ArrayList<Node<E>> visited)
+    public void bfs(Set<Node<E>> set)
     {
         if(set.isEmpty())
         {
@@ -68,6 +71,6 @@ public class MyBFS<E> implements graphs.BFS<E> {
                 }
             }
         }
-        bfs(set, list, visited);
+        bfs(set);
     }
 }
