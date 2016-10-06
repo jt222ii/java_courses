@@ -25,9 +25,12 @@ public class TestShit {
         graph.addEdgeFor("e", "g");
         graph.addEdgeFor("e", "f");
 
+
+        graph.addEdgeFor("u", "v");
+
         MyDFS dfs = new MyDFS();
         System.out.println(dfs.dfs(graph));
-        System.out.println(dfs.postOrder(graph));
-        System.out.println(dfs.topSort(graph));
+        //System.out.println(dfs.postOrder(graph));
+        //System.out.println(dfs.topSort(graph));
     }
 }
