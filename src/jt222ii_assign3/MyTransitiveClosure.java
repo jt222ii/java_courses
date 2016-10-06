@@ -14,13 +14,13 @@ public class MyTransitiveClosure<E> implements graphs.TransitiveClosure<E> {
     @Override
     public Map<Node<E>, Collection<Node<E>>> computeClosure(DirectedGraph<E> dg)
     {
-        MyDFS dfs = new MyDFS();
+        MyDFS<E> dfs = new MyDFS<>();
         Map<Node<E>, Collection<Node<E>>> map = new HashMap<>();
-        for (E item:dg.allItems())
+        Iterator<Node<E>> itr = dg.iterator();
+        while (itr.hasNext())
         {
-            Node<E> node = dg.getNodeFor(item);
-            List<Node<E>> tempList = dfs.dfs(dg, node);
-            map.put(node, tempList);
+            Node<E> node = itr.next();
+            map.put(node, dfs.dfs(dg, node));
         }
         return map;
     }

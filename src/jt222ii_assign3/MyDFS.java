@@ -10,9 +10,7 @@ import java.util.*;
  */
 public class MyDFS<E> implements graphs.DFS<E> {
 
-    private ArrayList<Node<E>> list = new ArrayList<>();//kan denna bytas mot en linkedhashmap kanske?
-    private Set<Node<E>> visited = new HashSet<>(); // this is used even in the function that could use list.contains instead because contains in hashset is much faster
-    /**
+     /**
      * Returns the nodes visited by a depth first search starting from
      * the given root node. Each visited node is also attached with
      * a depth-first number.
@@ -20,10 +18,9 @@ public class MyDFS<E> implements graphs.DFS<E> {
     @Override
     public List<Node<E>> dfs(DirectedGraph<E> graph, Node<E> root)
     {
-        list.clear();
-        visited.clear();
-        dfs(root);
-        return list;
+        LinkedList<Node<E>> list = new LinkedList<>();
+        Set<Node<E>> visited = new HashSet<>();
+        return dfs(root, list, visited);
     }
 
     /**
@@ -34,8 +31,6 @@ public class MyDFS<E> implements graphs.DFS<E> {
     @Override
     public List<Node<E>> dfs(DirectedGraph<E> graph)
     {
-        list.clear();
-        visited.clear();//dsahgdahjs
         //Outcommented code does not seem to work. It was added later. It works in the tests but not in the benchmark..
         /*if(graph.headCount() != 0)
         {
@@ -49,8 +44,10 @@ public class MyDFS<E> implements graphs.DFS<E> {
         {
             dfs(graph.getNodeFor(graph.allItems().get(0)));
         }*/
+        LinkedList<Node<E>> list = new LinkedList<>();
+        Set<Node<E>> visited = new HashSet<>();
         for (E item:graph.allItems()) {
-            dfs(graph.getNodeFor(item));
+            dfs(graph.getNodeFor(item), list, visited);
         }
         return list;
     }
@@ -67,9 +64,12 @@ public class MyDFS<E> implements graphs.DFS<E> {
      */
     @Override
     public List<Node<E>> postOrder(DirectedGraph<E> g, Node<E> root) {
-        list.clear();
-        visited.clear();
-        postOrder(root);
+
+        //list.clear();
+        //visited.clear();
+        LinkedList<Node<E>> list = new LinkedList<>();
+        Set<Node<E>> visited = new HashSet<>();
+        postOrder(root, list, visited);
         return list;
     }
 
@@ -83,19 +83,21 @@ public class MyDFS<E> implements graphs.DFS<E> {
      */
     @Override
     public List<Node<E>> postOrder(DirectedGraph<E> g) {
-        list.clear();
-        visited.clear();
+        LinkedList<Node<E>> list = new LinkedList<>();
+        Set<Node<E>> visited = new HashSet<>();
+        //list.clear();
+        //visited.clear();
         if(g.headCount() != 0)
         {
             Iterator<Node<E>> headItr = g.heads();
             while(headItr.hasNext())
             {
-                postOrder(headItr.next());
+                postOrder(headItr.next(), list, visited);
             }
         }
         else
         {
-            postOrder(g.getNodeFor(g.allItems().get(0)));
+            postOrder(g.getNodeFor(g.allItems().get(0)), list, visited);
         }
         /*for (E item:g.allItems()) {
             postOrder(g.getNodeFor(item), list, visited);
@@ -124,13 +126,12 @@ public class MyDFS<E> implements graphs.DFS<E> {
     @Override
     public boolean isCyclic(DirectedGraph<E> graph)
     {
-        for(E item : graph.allItems())
+        for(Node<E> node : postOrder(graph))
         {
-            Node<E> node = graph.getNodeFor(item);
             Iterator<Node<E>> it = node.succsOf();
             while(it.hasNext())
             {
-                if(node == it.next())
+                if(node.num <= it.next().num)
                 {
                     return true;
                 }
@@ -147,18 +148,20 @@ public class MyDFS<E> implements graphs.DFS<E> {
      */
     @Override
     public List<Node<E>> topSort(DirectedGraph<E> graph) {
-        list.clear();
-        visited.clear();
+        LinkedList<Node<E>> list = new LinkedList<>();
+        Set<Node<E>> visited = new HashSet<>();
+        //list.clear();
+        //visited.clear();
         if(isCyclic(graph)) {
             return null;
         }
         for (E item:graph.allItems()) {
-            topoSort(graph.getNodeFor(item));
+            topoSort(graph.getNodeFor(item), list, visited);
         }
         return list;
     }
 
-    private void dfs(Node<E> root)
+    private List<Node<E>> dfs(Node<E> root, LinkedList<Node<E>> list, Set<Node<E>> visited)
     {
         if(!visited.contains(root)) {
             root.num = list.size();
@@ -166,26 +169,28 @@ public class MyDFS<E> implements graphs.DFS<E> {
             visited.add(root);
             Iterator<Node<E>> it = root.succsOf();
             while (it.hasNext()) {
-                dfs(it.next());
+                dfs(it.next(), list, visited);
             }
         }
+        return list;
     }
 
-    private void postOrder(Node<E> root)
+    private List<Node<E>> postOrder(Node<E> root, LinkedList<Node<E>> list, Set<Node<E>> visited)
     {
         if(!visited.contains(root)) {
             visited.add(root);
             Iterator<Node<E>> it = root.succsOf();
             while (it.hasNext()) {
-                postOrder(it.next());
+                postOrder(it.next(), list, visited);
             }
             root.num = list.size()+1;
             list.add(root);
         }
+        return list;
     }
 
-    private void topoSort(Node<E> root) {
-        postOrder(root);
+    private List<Node<E>> topoSort(Node<E> root, LinkedList<Node<E>> list, Set<Node<E>> visited) {
+        postOrder(root, list, visited);
         int x = 0;
         int y = list.size()-1;
         while (x < y) {
@@ -194,5 +199,6 @@ public class MyDFS<E> implements graphs.DFS<E> {
             list.set( y, temp);
             x++; y--;
         }
+        return list;
     }
 }
