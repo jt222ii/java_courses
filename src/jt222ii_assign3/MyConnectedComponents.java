@@ -27,19 +27,20 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
     private LinkedList<Node<E>> nodes = new LinkedList<>();
     private MyDFS<E> dfs = new MyDFS<>();
     private Map<Node<E>, Collection<Node<E>>> map = new HashMap<>();
+    private LinkedList<LinkedList<Node<E>>> tmpMainList = new LinkedList<>();
     @Override
     public Collection<Collection<Node<E>>> computeComponents(DirectedGraph<E> dg) {
         Collection<Collection<Node<E>>> mainList = new LinkedList<>();
-        LinkedList<LinkedList<Node<E>>> tmpMainList = new LinkedList<>();
+        tmpMainList.clear();
         visited.clear();
         nodes.clear();
-        //dg.iterator().forEachRemaining(nodes::add); //for each node in the graph add it to the list of nodes
 
         Iterator<Node<E>> nodesItr = dg.iterator();
         while (nodesItr.hasNext()) //foreach node in the list of nodes
         {
             Node<E> n = nodesItr.next();
             if(!visited.contains(n)) {
+
                 List<Node<E>> tmpList = dfs.dfs(dg, n); //add the result of the dfs
 
                 LinkedList<Node<E>> nodesToAdd = new LinkedList<>(); //list of the nodes to add to the main list
@@ -52,19 +53,35 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
                         nodesToAdd.add(node);//add the node to the list that will be added to the main list
                         map.put(node, nodesToAdd);
                     } else if (node != n) {
-                        merged = true;
-                        tmpMainList.get(tmpMainList.indexOf(map.get(node))).addAll(nodesToAdd);
+                        for(Collection<Node<E>> col : tmpMainList)
+                        {
+                            if(col.contains(node))
+                            {
+                                merged = true;
+                                for (Node<E> nodeToAdd : nodesToAdd)
+                                {
+                                    if(!col.contains(nodeToAdd))
+                                    {
+                                        col.add(nodeToAdd);
+                                    }
+                                }
+                                visited.addAll(nodesToAdd);
+                            }
+                        }
                     }
-
                 }
-
-                if (nodesToAdd.size() > 0 && !merged)//if the nodesToAdd list has anything to add... add it to the mainList
+                if(!merged)
                 {
-                    tmpMainList.add(nodesToAdd);
+                    LinkedList<Node<E>> nodes = new LinkedList<>();
+                    nodes.addAll(tmpList);
+                    visited.addAll(tmpList);
+                    tmpMainList.add(nodes);
                 }
             }
+            visited.add(n);
         }
         mainList.addAll(tmpMainList);
+        //System.out.println(mainList);
         return mainList;
     }
 }

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04c8ed58-e87d-4363-93c5-e1b8fe57faa0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/graphs/benchmark/BenchmarkMain.class" afterPath="$PROJECT_DIR$/out/production/2DV600/graphs/benchmark/BenchmarkMain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign3/MyConnectedComponents.class" afterPath="$PROJECT_DIR$/out/production/2DV600/jt222ii_assign3/MyConnectedComponents.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java" afterPath="$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jt222ii_assign3/MyConnectedComponents.java" afterPath="$PROJECT_DIR$/src/jt222ii_assign3/MyConnectedComponents.java" />
     </list>
     <ignored path="2DV600.iws" />
@@ -28,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyConnectedComponents.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyConnectedComponents.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyConnectedComponents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+            <state relative-caret-position="352">
+              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,31 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BenchmarkMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BenchmarkMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphBenchmark.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/GraphBenchmark.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="338" column="80" selection-start-line="338" selection-start-column="80" selection-end-line="338" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyTransitiveClosure.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyTransitiveClosure.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="272">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -73,30 +55,18 @@
       <file leaf-file-name="TestAlgorithms.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphs/test/TestAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="434">
+              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyDFS.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyDFS.java">
+      <file leaf-file-name="GraphGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphs/test/GraphGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2415">
-              <caret line="167" column="27" selection-start-line="167" selection-start-column="27" selection-end-line="167" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestShit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/TestShit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="403">
+              <caret line="276" column="40" selection-start-line="276" selection-start-column="40" selection-end-line="276" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -123,7 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/jt222ii_assign2/Exercise2/Passenger.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign2/Exercise2/Bicycle.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign2/Exercise2/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign2/Exercise2/Lorry.java" />
@@ -172,8 +141,9 @@
         <option value="$PROJECT_DIR$/src/jt222ii_assign3/MyDFS.java" />
         <option value="$PROJECT_DIR$/src/jt222ii_assign3/TestShit.java" />
         <option value="$PROJECT_DIR$/src/graphs/test/TestAlgorithms.java" />
-        <option value="$PROJECT_DIR$/src/jt222ii_assign3/MyConnectedComponents.java" />
+        <option value="$PROJECT_DIR$/src/graphs/test/GraphGenerator.java" />
         <option value="$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java" />
+        <option value="$PROJECT_DIR$/src/jt222ii_assign3/MyConnectedComponents.java" />
       </list>
     </option>
   </component>
@@ -185,10 +155,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="29" />
-    <option name="width" value="1258" />
-    <option name="height" value="701" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -215,8 +185,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,7 +301,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -729,8 +699,8 @@
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.BenchmarkMain" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.TestAlgorithms.testConnectedComponents" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestAlgorithms.testTransitiveClosure" />
-        <item index="3" class="java.lang.String" itemvalue="Application.TestAlgorithms" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TestAlgorithms" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestAlgorithms.testTransitiveClosure" />
         <item index="4" class="java.lang.String" itemvalue="Application.TestDFS" />
       </list>
     </recent_temporary>
@@ -752,54 +722,54 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 17h 35m 33s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 43m 45s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 17h 42m 30s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 45m 09s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 17h 43m 06s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 47m 22s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 17h 46m 20s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 47m 35s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 17h 47m 01s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 47m 46s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 17h 48m 31s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 51m 44s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 17h 51m 57s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 52m 04s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 18h 06m 45s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 52m 32s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 18h 08m 57s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 54m 12s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 18h 11m 39s.xml">
+    <history-entry file="TestAlgorithms_testConnectedComponents - 2016.10.07 at 21h 55m 23s.xml">
       <configuration name="TestAlgorithms.testConnectedComponents" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="29" width="1258" height="701" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32288402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32241014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28840125" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37341774" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" x="0" y="354" width="1920" height="332" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3731501" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" x="0" y="354" width="1920" height="332" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266385" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15977742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21328124" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -826,7 +796,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="36" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1001,32 +971,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/test/GeneratorMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="392" column="13" selection-start-line="392" selection-start-column="13" selection-end-line="392" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/test/GraphGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="207" column="35" selection-start-line="207" selection-start-column="35" selection-end-line="207" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1372#1373#0" expanded="false" />
-            <element signature="e#1406#1407#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/Class.java" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign2/Exercise5/HashWordSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
@@ -1034,50 +979,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="144" column="7" selection-start-line="144" selection-start-column="7" selection-end-line="144" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/DirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="140" column="14" selection-start-line="140" selection-start-column="14" selection-end-line="140" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/GML.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/test/TestDirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1952">
-          <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/directed_graph_[1].gml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/DFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/Node.java" />
+    <entry file="file://$PROJECT_DIR$/src/graphs/DirectedGraph.java" />
+    <entry file="file://$PROJECT_DIR$/src/graphs/GML.java" />
+    <entry file="file://$PROJECT_DIR$/src/graphs/test/TestDirectedGraph.java" />
+    <entry file="file://$PROJECT_DIR$/directed_graph_[1].gml" />
+    <entry file="file://$PROJECT_DIR$/src/graphs/DFS.java" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyGML.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1085,13 +992,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/BFS.java" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1099,13 +1000,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/TransitiveClosure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/TransitiveClosure.java" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2910">
@@ -1116,13 +1011,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/ConnectedComponents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/ConnectedComponents.java" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyBFS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1131,16 +1020,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/test/TestDFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/test/TestDFS.java" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/TestShit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="527">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding />
         </state>
@@ -1148,10 +1031,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyDFS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
+        <state relative-caret-position="2737">
           <caret line="167" column="27" selection-start-line="167" selection-start-column="27" selection-end-line="167" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3667#3668#0" expanded="false" />
+            <element signature="e#3694#3695#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1164,45 +1048,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/GraphBenchmark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="338" column="80" selection-start-line="338" selection-start-column="80" selection-end-line="338" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/GraphBenchmark.java" />
     <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyTransitiveClosure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="204">
           <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyConnectedComponents.java">
+    <entry file="file://$PROJECT_DIR$/src/graphs/test/GeneratorMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-526">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphs/test/TestAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state relative-caret-position="434">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/test/GraphGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="276" column="40" selection-start-line="276" selection-start-column="40" selection-end-line="276" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="272">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jt222ii_assign3/MyConnectedComponents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
