@@ -31,23 +31,10 @@ public class MyDFS<E> implements graphs.DFS<E> {
     @Override
     public List<Node<E>> dfs(DirectedGraph<E> graph)
     {
-        //Outcommented code does not seem to work. It was added later. It works in the tests but not in the benchmark..
-        /*if(graph.headCount() != 0)
-        {
-            Iterator<Node<E>> headItr = graph.heads();
-            while(headItr.hasNext())
-            {
-                dfs(headItr.next());
-            }
-        }
-        else
-        {
-            dfs(graph.getNodeFor(graph.allItems().get(0)));
-        }*/
         LinkedList<Node<E>> list = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
-        for (E item:graph.allItems()) {
-            dfs(graph.getNodeFor(item), list, visited);
+        for (Node<E> n : graph) {
+            dfs(n, list, visited);
         }
         return list;
     }
@@ -64,9 +51,6 @@ public class MyDFS<E> implements graphs.DFS<E> {
      */
     @Override
     public List<Node<E>> postOrder(DirectedGraph<E> g, Node<E> root) {
-
-        //list.clear();
-        //visited.clear();
         LinkedList<Node<E>> list = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
         postOrder(root, list, visited);
@@ -150,13 +134,11 @@ public class MyDFS<E> implements graphs.DFS<E> {
     public List<Node<E>> topSort(DirectedGraph<E> graph) {
         LinkedList<Node<E>> list = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
-        //list.clear();
-        //visited.clear();
         if(isCyclic(graph)) {
             return null;
         }
-        for (E item:graph.allItems()) {
-            topoSort(graph.getNodeFor(item), list, visited);
+        for (Node<E> n : graph) {
+            topoSort(n, list, visited);
         }
         return list;
     }

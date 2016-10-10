@@ -26,7 +26,6 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
     private Set<Node<E>> visited = new HashSet<>();
     private LinkedList<Node<E>> nodes = new LinkedList<>();
     private MyDFS<E> dfs = new MyDFS<>();
-    private Map<Node<E>, Collection<Node<E>>> map = new HashMap<>();
     private LinkedList<LinkedList<Node<E>>> tmpMainList = new LinkedList<>();
     @Override
     public Collection<Collection<Node<E>>> computeComponents(DirectedGraph<E> dg) {
@@ -51,7 +50,6 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
                     if (!visited.contains(node)) {
                         visited.add(node); //add the node to the visited list
                         nodesToAdd.add(node);//add the node to the list that will be added to the main list
-                        map.put(node, nodesToAdd);
                     } else if (node != n) {
                         for(Collection<Node<E>> col : tmpMainList)
                         {

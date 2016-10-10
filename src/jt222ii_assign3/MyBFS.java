@@ -37,8 +37,8 @@ public class MyBFS<E> implements graphs.BFS<E> {
         list.clear();
         visited.clear();
         Set<Node<E>> set = new HashSet<>();
-        for (E item:graph.allItems()) {
-            set.add(graph.getNodeFor(item));
+        for (Node<E> n : graph) {
+            set.add(n);
         }
         bfs(set);
         return list;
