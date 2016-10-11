@@ -23,16 +23,13 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
      * @author jonasl
      *
      */
-    private Set<Node<E>> visited = new HashSet<>();
-    private LinkedList<Node<E>> nodes = new LinkedList<>();
-    private MyDFS<E> dfs = new MyDFS<>();
-    private LinkedList<LinkedList<Node<E>>> tmpMainList = new LinkedList<>();
     @Override
     public Collection<Collection<Node<E>>> computeComponents(DirectedGraph<E> dg) {
         Collection<Collection<Node<E>>> mainList = new LinkedList<>();
-        tmpMainList.clear();
-        visited.clear();
-        nodes.clear();
+        Set<Node<E>> visited = new HashSet<>();
+        MyDFS<E> dfs = new MyDFS<>();
+        LinkedList<LinkedList<Node<E>>> tmpMainList = new LinkedList<>();
+
 
         Iterator<Node<E>> nodesItr = dg.iterator();
         while (nodesItr.hasNext()) //foreach node in the list of nodes
@@ -79,7 +76,6 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
             visited.add(n);
         }
         mainList.addAll(tmpMainList);
-        //System.out.println(mainList);
         return mainList;
     }
 }

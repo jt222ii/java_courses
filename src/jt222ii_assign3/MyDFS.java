@@ -33,8 +33,17 @@ public class MyDFS<E> implements graphs.DFS<E> {
     {
         LinkedList<Node<E>> list = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
-        for (Node<E> n : graph) {
-            dfs(n, list, visited);
+        if(graph.headCount() != 0)
+        {
+            Iterator<Node<E>> headItr = graph.heads();
+            while(headItr.hasNext())
+            {
+                dfs(headItr.next(), list, visited);
+            }
+        }
+        else
+        {
+            dfs(graph.getNodeFor(graph.allItems().get(0)), list, visited);
         }
         return list;
     }
@@ -69,8 +78,6 @@ public class MyDFS<E> implements graphs.DFS<E> {
     public List<Node<E>> postOrder(DirectedGraph<E> g) {
         LinkedList<Node<E>> list = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
-        //list.clear();
-        //visited.clear();
         if(g.headCount() != 0)
         {
             Iterator<Node<E>> headItr = g.heads();

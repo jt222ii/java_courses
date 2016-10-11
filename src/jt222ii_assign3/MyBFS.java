@@ -37,8 +37,17 @@ public class MyBFS<E> implements graphs.BFS<E> {
         list.clear();
         visited.clear();
         Set<Node<E>> set = new HashSet<>();
-        for (Node<E> n : graph) {
-            set.add(n);
+        if(graph.headCount() != 0)
+        {
+            Iterator<Node<E>> headItr = graph.heads();
+            while(headItr.hasNext())
+            {
+                set.add(headItr.next());
+            }
+        }
+        else
+        {
+            set.add(graph.getNodeFor(graph.allItems().get(0)));
         }
         bfs(set);
         return list;
@@ -55,7 +64,7 @@ public class MyBFS<E> implements graphs.BFS<E> {
         while (itr.hasNext())
         {
             Node<E> node = itr.next();
-            if(!list.contains(node))
+            if(!visited.contains(node))
             {
                 visited.add(node);
                 node.num = list.size();

@@ -16,7 +16,12 @@ public class TestShit {
 
         gml.dumpGML();*/
 
-        graph.addEdgeFor("a", "c");
+        graph.addEdgeFor("a", "b");
+        graph.addEdgeFor("b", "a");
+        graph.addEdgeFor("c", "d");
+        graph.addEdgeFor("d", "c");
+
+        /*graph.addEdgeFor("a", "c");
         graph.addEdgeFor("a", "b");
         graph.addEdgeFor("b", "d");
         graph.addEdgeFor("c", "d");
@@ -26,11 +31,12 @@ public class TestShit {
         graph.addEdgeFor("e", "f");
 
 
-        graph.addEdgeFor("u", "v");
+        graph.addEdgeFor("u", "v");*/
 
         MyDFS dfs = new MyDFS();
         System.out.println(dfs.dfs(graph));
-        //System.out.println(dfs.postOrder(graph));
+        System.out.println("------");
+        System.out.println(dfs.postOrder(graph));
         //System.out.println(dfs.topSort(graph));
     }
 }
