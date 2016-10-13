@@ -17,7 +17,7 @@ public class MyGML<E> extends graphs.GML<E> {
     }
 
     /**
-     * The GML mark-up string constructor.
+     * Returns a gml string of the graph
      */
     @Override
     public String toGML() {
@@ -44,7 +44,6 @@ public class MyGML<E> extends graphs.GML<E> {
                 str += "\tedge \n\t[ \n";
                 str += "\t\tsource "+map.get(node)+"\n";
                 str += "\t\ttarget "+map.get(target)+"\n";
-                //str += "\t\tlabel \"edge from node "+node+" to node "+target+"\"\n";
                 str += "\t]\n";
             }
             index++;

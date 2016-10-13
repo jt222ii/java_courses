@@ -63,12 +63,12 @@ graph
 	edge 
 	[ 
 		source 3
-		target 1
+		target 4
 	]
 	edge 
 	[ 
 		source 3
-		target 4
+		target 1
 	]
 	edge 
 	[ 

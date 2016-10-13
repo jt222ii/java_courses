@@ -53,7 +53,7 @@ public class MyNode<E> extends graphs.Node<E> {
         return new succsIterator();
     }
 
-    @SuppressWarnings("unchecked cast")
+    //@SuppressWarnings("unchecked cast")
     private class succsIterator implements Iterator<Node<E>>
     {
         int index = 0;

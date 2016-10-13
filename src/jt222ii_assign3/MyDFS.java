@@ -33,6 +33,7 @@ public class MyDFS<E> implements graphs.DFS<E> {
     {
         LinkedList<Node<E>> list = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
+        //If the graph has heads use them as root
         if(graph.headCount() != 0)
         {
             Iterator<Node<E>> headItr = graph.heads();
@@ -41,7 +42,7 @@ public class MyDFS<E> implements graphs.DFS<E> {
                 dfs(headItr.next(), list, visited);
             }
         }
-        else
+        else //if the graph has no heads use the first node in the graph list
         {
             dfs(graph.getNodeFor(graph.allItems().get(0)), list, visited);
         }
@@ -78,6 +79,7 @@ public class MyDFS<E> implements graphs.DFS<E> {
     public List<Node<E>> postOrder(DirectedGraph<E> g) {
         LinkedList<Node<E>> list = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
+        //If the graph has heads use them as root
         if(g.headCount() != 0)
         {
             Iterator<Node<E>> headItr = g.heads();
@@ -86,13 +88,10 @@ public class MyDFS<E> implements graphs.DFS<E> {
                 postOrder(headItr.next(), list, visited);
             }
         }
-        else
+        else//if the graph has no heads use the first node in the graph list
         {
             postOrder(g.getNodeFor(g.allItems().get(0)), list, visited);
         }
-        /*for (E item:g.allItems()) {
-            postOrder(g.getNodeFor(item), list, visited);
-        }*/
         return list;
     }
 
@@ -104,6 +103,7 @@ public class MyDFS<E> implements graphs.DFS<E> {
      * The algorithm attaches a depth-first number if <tt>attach_dfs_number</tt>
      * is <tt>true</tt>, otherwise it attaches a post-order number.
      */
+    //Don't know what this is used for. Not used in test and Johan said there was no need to implement it
     @Override
     public List<Node<E>> postOrder(DirectedGraph<E> g, boolean attach_dfs_number)
     {
@@ -120,7 +120,7 @@ public class MyDFS<E> implements graphs.DFS<E> {
         for(Node<E> node : postOrder(graph))
         {
             Iterator<Node<E>> it = node.succsOf();
-            while(it.hasNext())
+            while(it.hasNext())//If the graph contains any backwards edges the graph is cyclic
             {
                 if(node.num <= it.next().num)
                 {
@@ -150,12 +150,20 @@ public class MyDFS<E> implements graphs.DFS<E> {
         return list;
     }
 
+    /**
+     * Recursive function that returns a list containing the result of a depth first search
+     * @param root
+     * @param list
+     * @param visited
+     * @return
+     */
     private List<Node<E>> dfs(Node<E> root, LinkedList<Node<E>> list, Set<Node<E>> visited)
     {
         if(!visited.contains(root)) {
             root.num = list.size();
             list.add(root);
             visited.add(root);
+            // for each successor in of the root node make a recursive call for each successor
             Iterator<Node<E>> it = root.succsOf();
             while (it.hasNext()) {
                 dfs(it.next(), list, visited);
@@ -164,10 +172,18 @@ public class MyDFS<E> implements graphs.DFS<E> {
         return list;
     }
 
+    /**
+     * Recursive function that returns a list containing the result of the postorder from the root
+     * @param root
+     * @param list
+     * @param visited
+     * @return
+     */
     private List<Node<E>> postOrder(Node<E> root, LinkedList<Node<E>> list, Set<Node<E>> visited)
     {
         if(!visited.contains(root)) {
             visited.add(root);
+            // for each successor in of the root node make a recursive call for each successor
             Iterator<Node<E>> it = root.succsOf();
             while (it.hasNext()) {
                 postOrder(it.next(), list, visited);
@@ -178,8 +194,18 @@ public class MyDFS<E> implements graphs.DFS<E> {
         return list;
     }
 
+    /**
+     * Recursive function that returns a list containing the result of a topological sort
+     * @param root
+     * @param list
+     * @param visited
+     * @return
+     */
     private List<Node<E>> topoSort(Node<E> root, LinkedList<Node<E>> list, Set<Node<E>> visited) {
-        postOrder(root, list, visited);
+        //Topo sort is the reversed result of postorder
+        postOrder(root, list, visited); //call the postorder to set list to the result of postorder
+
+        //Reverse the list
         int x = 0;
         int y = list.size()-1;
         while (x < y) {

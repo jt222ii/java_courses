@@ -25,58 +25,60 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
      */
     @Override
     public Collection<Collection<Node<E>>> computeComponents(DirectedGraph<E> dg) {
-        Collection<Collection<Node<E>>> mainList = new LinkedList<>();
         Set<Node<E>> visited = new HashSet<>();
         MyDFS<E> dfs = new MyDFS<>();
-        LinkedList<LinkedList<Node<E>>> tmpMainList = new LinkedList<>();
+        Collection<Collection<Node<E>>> collectionToReturn = new HashSet<>();
 
 
         Iterator<Node<E>> nodesItr = dg.iterator();
-        while (nodesItr.hasNext()) //foreach node in the list of nodes
+        while (nodesItr.hasNext()) //iterate through each node in the collection of nodes.
         {
-            Node<E> n = nodesItr.next();
+            Node<E> n = nodesItr.next(); //next root
             if(!visited.contains(n)) {
 
                 List<Node<E>> tmpList = dfs.dfs(dg, n); //add the result of the dfs
 
-                LinkedList<Node<E>> nodesToAdd = new LinkedList<>(); //list of the nodes to add to the main list
+                HashSet<Node<E>> nodesToAdd = new HashSet<>(); //list of the nodes to add to the main list
 
                 boolean merged = false;
                 for (Node<E> node : tmpList) //for each node in the temporary list we got from the dfs
                 {
-                    if (!visited.contains(node)) {
+                    if (!visited.contains(node))
+                    {
                         visited.add(node); //add the node to the visited list
                         nodesToAdd.add(node);//add the node to the list that will be added to the main list
-                    } else if (node != n) {
-                        for(Collection<Node<E>> col : tmpMainList)
+                    }
+                    else if (node != n) //If the node is not visited and is not the same as the root node
+                    {
+                        for(Collection<Node<E>> col : collectionToReturn) //for each collection in the main collection...
                         {
-                            if(col.contains(node))
+                            if(col.contains(node))//...see if the collection contains the new node
                             {
+                                //If col contains node merge the collections.
                                 merged = true;
-                                for (Node<E> nodeToAdd : nodesToAdd)
+                                for (Node<E> nodeToAdd : nodesToAdd)//foreach node in the nodesToAdd collection add the nodes that doesnt already exist in col to col
                                 {
                                     if(!col.contains(nodeToAdd))
                                     {
                                         col.add(nodeToAdd);
                                     }
                                 }
-                                visited.addAll(nodesToAdd);
+                                visited.addAll(nodesToAdd);//set all nodes that were added to be visited
                             }
                         }
                     }
                 }
-                if(!merged)
+                if(!merged)//If no merge was made create a new collection and add it to the main collection
                 {
-                    LinkedList<Node<E>> nodes = new LinkedList<>();
+                    HashSet<Node<E>> nodes = new HashSet<>();
                     nodes.addAll(tmpList);
                     visited.addAll(tmpList);
-                    tmpMainList.add(nodes);
+                    collectionToReturn.add(nodes);
                 }
             }
-            visited.add(n);
+            visited.add(n);//set the root to be visited
         }
-        mainList.addAll(tmpMainList);
-        return mainList;
+        return collectionToReturn;
     }
 }
 

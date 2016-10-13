@@ -55,7 +55,7 @@ public class MyBFS<E> implements graphs.BFS<E> {
 
     public void bfs(Set<Node<E>> set)
     {
-        if(set.isEmpty())
+        if(set.isEmpty()) //If the set is empty there is no node to search from. Return
         {
             return;
         }
@@ -64,14 +64,14 @@ public class MyBFS<E> implements graphs.BFS<E> {
         while (itr.hasNext())
         {
             Node<E> node = itr.next();
-            if(!visited.contains(node))
+            if(!visited.contains(node))//if node is not already visited
             {
-                visited.add(node);
+                visited.add(node); //add it to visited
                 node.num = list.size();
-                list.add(node);
+                list.add(node);//add it to the main list
             }
             Iterator<Node<E>> successors = node.succsOf();
-            while(successors.hasNext())
+            while(successors.hasNext()) //for each of the nodes successors add it to the next set that will be used in the recursive call
             {
                 Node<E> n = successors.next();
                 if(!visited.contains(n))

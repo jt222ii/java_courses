@@ -16,12 +16,10 @@ public class MyTransitiveClosure<E> implements graphs.TransitiveClosure<E> {
     {
         MyDFS<E> dfs = new MyDFS<>();
         Map<Node<E>, Collection<Node<E>>> map = new HashMap<>();
-        Iterator<Node<E>> itr = dg.iterator();
-        while (itr.hasNext())
+        for (Node<E> node : dg) //foreach node in the graph..
         {
-            Node<E> node = itr.next();
-            map.put(node, dfs.dfs(dg, node));
+            map.put(node, dfs.dfs(dg, node));//...put the result of dfs, using the graph and node with node as key, to the map.
         }
-        return map;
+        return map;//return the map
     }
 }
