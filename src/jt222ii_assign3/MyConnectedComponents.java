@@ -25,60 +25,61 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
      */
     @Override
     public Collection<Collection<Node<E>>> computeComponents(DirectedGraph<E> dg) {
-        Set<Node<E>> visited = new HashSet<>();
-        MyDFS<E> dfs = new MyDFS<>();
-        Collection<Collection<Node<E>>> collectionToReturn = new HashSet<>();
+        Set<Node<E>> visited = new HashSet<>();                                                                             //O(1)
+        MyDFS<E> dfs = new MyDFS<>();                                                                                       //O(1)
+        Collection<Collection<Node<E>>> collectionToReturn = new HashSet<>();                                               //O(1)
 
 
         Iterator<Node<E>> nodesItr = dg.iterator();
-        while (nodesItr.hasNext()) //iterate through each node in the collection of nodes.
+        while (nodesItr.hasNext()) //iterate through each node in the collection of nodes.                                  //O(V)
         {
             Node<E> n = nodesItr.next(); //next root
-            if(!visited.contains(n)) {
+            if(!visited.contains(n)) {                                                                                      //O(1)
 
-                List<Node<E>> tmpList = dfs.dfs(dg, n); //add the result of the dfs
+                List<Node<E>> tmpList = dfs.dfs(dg, n); //add the result of the dfs                                         //O(V+E)
 
-                HashSet<Node<E>> nodesToAdd = new HashSet<>(); //list of the nodes to add to the main list
+                HashSet<Node<E>> nodesToAdd = new HashSet<>(); //list of the nodes to add to the main list                  //O(1)
 
-                boolean merged = false;
-                for (Node<E> node : tmpList) //for each node in the temporary list we got from the dfs
+                boolean merged = false;                                                                                     //O(1)
+                for (Node<E> node : tmpList) //for each node in the temporary list we got from the dfs                      //O(V)
                 {
-                    if (!visited.contains(node))
+                    if (!visited.contains(node))                                                                            //O(1)
                     {
-                        visited.add(node); //add the node to the visited list
-                        nodesToAdd.add(node);//add the node to the list that will be added to the main list
+                        visited.add(node); //add the node to the visited list                                               //O(1)
+                        nodesToAdd.add(node);//add the node to the list that will be added to the main list                 //O(1)
                     }
-                    else if (node != n) //If the node is not visited and is not the same as the root node
+                    else if (node != n) //If the node is not visited and is not the same as the root node                   //O(1)
                     {
-                        for(Collection<Node<E>> col : collectionToReturn) //for each collection in the main collection...
+                        for(Collection<Node<E>> col : collectionToReturn) //for each collection in the main collection...   //O(V)
                         {
-                            if(col.contains(node))//...see if the collection contains the new node
+                            if(col.contains(node))//...see if the collection contains the new node                          //O(1)
                             {
                                 //If col contains node merge the collections.
-                                merged = true;
-                                for (Node<E> nodeToAdd : nodesToAdd)//foreach node in the nodesToAdd collection add the nodes that doesnt already exist in col to col
+                                merged = true;                                                                              //O(1)
+                                //foreach node in the nodesToAdd collection add the nodes that doesnt already exist in col to col
+                                for (Node<E> nodeToAdd : nodesToAdd)                                                        //O(V)
                                 {
-                                    if(!col.contains(nodeToAdd))
+                                    if(!col.contains(nodeToAdd))                                                            //O(1)
                                     {
-                                        col.add(nodeToAdd);
+                                        col.add(nodeToAdd);                                                                 //O(1)
                                     }
                                 }
-                                visited.addAll(nodesToAdd);//set all nodes that were added to be visited
+                                visited.addAll(nodesToAdd);//set all nodes that were added to be visited                    //O(V)
                             }
                         }
                     }
                 }
                 if(!merged)//If no merge was made create a new collection and add it to the main collection
                 {
-                    HashSet<Node<E>> nodes = new HashSet<>();
-                    nodes.addAll(tmpList);
-                    visited.addAll(tmpList);
-                    collectionToReturn.add(nodes);
+                    HashSet<Node<E>> nodes = new HashSet<>();                                                               //O(1)
+                    nodes.addAll(tmpList);                                                                                  //O(V)
+                    visited.addAll(tmpList);                                                                                //O(V)
+                    collectionToReturn.add(nodes);                                                                          //O(1)
                 }
             }
-            visited.add(n);//set the root to be visited
+            visited.add(n);//set the root to be visited                                                                     //O(1)
         }
-        return collectionToReturn;
+        return collectionToReturn;                                                                                          //O(1)
     }
 }
 
