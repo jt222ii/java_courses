@@ -37,7 +37,7 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
             Node<E> head = itr.next();
             if(!visited.containsKey(head)) //if the node is not already added add the dfs from that node
             {
-                List<Node<E>> toAdd = new ArrayList<>(); //list of all the nodes that need to be added
+                HashSet<Node<E>> toAdd = new HashSet<>(); //list of all the nodes that need to be added
                 boolean merge = false;//boolean to store if a merge happens instead of a normal add to the main list "toReturn"
                 Node<E> tmpNode = null; //used to store a node to get the collection from that node later
                 List<Node<E>> dfsList = dfs.dfs(dg, head); //dfs from the head

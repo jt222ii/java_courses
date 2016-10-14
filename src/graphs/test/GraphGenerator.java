@@ -274,7 +274,7 @@ public class GraphGenerator {
 		DirectedGraph<Integer> dg = createEmptyGraph();
 
 		addEdge(dg,0,1); addEdge(dg,1,2);addEdge(dg,2,3);addEdge(dg,3,0);
-		addEdge(dg,4,5);addEdge(dg,6,5);addEdge(dg,100,5);addEdge(dg,111,100);addEdge(dg,222,111);addEdge(dg,222,5);addEdge(dg,222,900);
+		addEdge(dg,4,5);addEdge(dg,6,5);
 		addEdge(dg,7,8);
 		dg.addNodeFor(keys(9));
 		
