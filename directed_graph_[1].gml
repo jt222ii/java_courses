@@ -73,12 +73,12 @@ graph
 	edge 
 	[ 
 		source 4
-		target 6
+		target 5
 	]
 	edge 
 	[ 
 		source 4
-		target 5
+		target 6
 	]
 	edge 
 	[ 
