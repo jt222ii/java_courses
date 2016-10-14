@@ -23,13 +23,70 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
      * @author jonasl
      *
      */
+
     @Override
+    public Collection<Collection<Node<E>>> computeComponents(DirectedGraph<E> dg) {
+        Collection<Collection<Node<E>>> toReturn = new HashSet<>();
+        Map<Node<E>, Collection<Node<E>>> visited = new HashMap<>();
+        Set<Node<E>> toVisit = new HashSet<>();
+        MyDFS<E> dfs = new MyDFS<>();
+        dg.iterator().forEachRemaining(toVisit::add);
+        Iterator<Node<E>> itr = dg.heads();
+        while(!toVisit.isEmpty() && itr.hasNext())
+        {
+            Node<E> head = itr.next();
+            if(!visited.containsKey(head)) {
+                List<Node<E>> toAdd = new ArrayList<>();
+                boolean merge = false;
+                Node<E> tmpNode = null;
+                List<Node<E>> dfsList = dfs.dfs(dg, head);
+                Iterator<Node<E>> iterator = dfsList.iterator();
+                while(iterator.hasNext())
+                {
+                    Node<E> node = iterator.next();
+                    if(!visited.containsKey(node)) {
+                        toAdd.add(node);
+                        visited.put(node, toAdd);
+                    }
+                    else
+                    {
+                        merge = true;
+                        tmpNode = node;
+                    }
+                }
+                if(merge)
+                {
+                    visited.get(tmpNode).addAll(toAdd);
+                }
+                else
+                {
+                    toReturn.add(toAdd);
+                }
+                toVisit.removeAll(dfsList);
+            }
+        }
+        itr = toVisit.iterator();
+        while(itr.hasNext())
+        {
+            Node<E> n = itr.next();
+            if(!visited.containsKey(n))
+            {
+                List<Node<E>> dfsList = dfs.dfs(dg, n);
+                dfsList.iterator().forEachRemaining(node -> visited.put(node, dfsList));
+                toReturn.add(dfsList);
+            }
+            itr.remove();
+        }
+        System.out.println(toReturn);
+        return toReturn;
+    }
+
+   /* @Override
     public Collection<Collection<Node<E>>> computeComponents(DirectedGraph<E> dg) {
         Set<Node<E>> visited = new HashSet<>();                                                                             //O(1)
         MyDFS<E> dfs = new MyDFS<>();                                                                                       //O(1)
-        Collection<Collection<Node<E>>> collectionToReturn = new HashSet<>();                                               //O(1)
-
-
+        Collection<Collection<Node<E>>> toReturn = new HashSet<>();                                                         //O(1)
+        LinkedList<HashSet<Node<E>>> collectionToReturn = new LinkedList<>();
         Iterator<Node<E>> nodesItr = dg.iterator();
         while (nodesItr.hasNext()) //iterate through each node in the collection of nodes.                                  //O(V)
         {
@@ -39,8 +96,8 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
                 List<Node<E>> tmpList = dfs.dfs(dg, n); //add the result of the dfs                                         //O(V+E)
 
                 HashSet<Node<E>> nodesToAdd = new HashSet<>(); //list of the nodes to add to the main list                  //O(1)
-
-                boolean merged = false;                                                                                     //O(1)
+                boolean merge = false;                                                                                     //O(1)
+                Node<E> tmpNode = null;
                 for (Node<E> node : tmpList) //for each node in the temporary list we got from the dfs                      //O(V)
                 {
                     if (!visited.contains(node))                                                                            //O(1)
@@ -50,37 +107,54 @@ public class MyConnectedComponents<E> implements graphs.ConnectedComponents<E> {
                     }
                     else if (node != n) //If the node is not visited and is not the same as the root node                   //O(1)
                     {
-                        for(Collection<Node<E>> col : collectionToReturn) //for each collection in the main collection...   //O(V)
+                        tmpNode = node;                                                                                     //O(1)
+                        merge = true;                                                                                       //O(1)
+                    }
+                }
+                if(merge && tmpNode != null)
+                {
+                    //add all successors as well
+                    for (Node<E> node : nodesToAdd)                                                                         //O(V)
+                    {
+                        node.succsOf().forEachRemaining(nodesToAdd::add);                                                   //O(E)
+                    }
+                    for(Collection<Node<E>> col : collectionToReturn) //for each collection in the main collection...       //O(V)
+                    {
+                        for(Node<E> node : nodesToAdd) //find the collection that already has the node                      //O(V)
                         {
-                            if(col.contains(node))//...see if the collection contains the new node                          //O(1)
+                            if(col.contains(node))
                             {
-                                //If col contains node merge the collections.
-                                merged = true;                                                                              //O(1)
-                                //foreach node in the nodesToAdd collection add the nodes that doesnt already exist in col to col
-                                for (Node<E> nodeToAdd : nodesToAdd)                                                        //O(V)
-                                {
-                                    if(!col.contains(nodeToAdd))                                                            //O(1)
-                                    {
-                                        col.add(nodeToAdd);                                                                 //O(1)
-                                    }
-                                }
-                                visited.addAll(nodesToAdd);//set all nodes that were added to be visited                    //O(V)
+                                col.addAll(nodesToAdd); //add all the nodes to that collection                              //O(V)
                             }
                         }
                     }
+                    //Find and remove the left over collection so that ex: [1,2] merged with [3,4] becomes [1,2,3,4] and not [1,2][1,2,3,4] (Old code bugged with specific cases on this in my own testing)
+                    Collection<Node<E>> tempCol = null;
+                    for(Collection<Node<E>> col : collectionToReturn)                                                       //O(V)
+                    {
+                        if(col.equals(nodesToAdd) && col.size() == nodesToAdd.size())                                       //O(1)
+                        {
+                            tempCol = col;
+                            break;
+                        }
+                    }
+                    if(tempCol != null) {
+                        collectionToReturn.remove(tempCol);                                                                 //linkedlist deletion O(1)
+                    }
+
                 }
-                if(!merged)//If no merge was made create a new collection and add it to the main collection
+                else if(!merge)//If no merge was made create a new collection and add it to the main collection
                 {
                     HashSet<Node<E>> nodes = new HashSet<>();                                                               //O(1)
                     nodes.addAll(tmpList);                                                                                  //O(V)
-                    visited.addAll(tmpList);                                                                                //O(V)
                     collectionToReturn.add(nodes);                                                                          //O(1)
                 }
             }
             visited.add(n);//set the root to be visited                                                                     //O(1)
         }
-        return collectionToReturn;                                                                                          //O(1)
-    }
+        toReturn.addAll(collectionToReturn);
+        return toReturn;                                                                                                     //O(1)
+    }*/
 }
 
 
