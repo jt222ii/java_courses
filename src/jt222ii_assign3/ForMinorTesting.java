@@ -3,7 +3,7 @@ package jt222ii_assign3;
 /**
  * Created by jonastornfors on 2016-09-29.
  */
-public class TestShit {
+public class ForMinorTesting {
     public static void main(String[] args) {
         MyGraph<String> graph = new MyGraph<>();
 
