@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-import jt222ii_assign3.*;     // Replace with groupname.*
+import jt222ii.*;     // Replace with groupname.*
 
 /**
  * @author jonasl

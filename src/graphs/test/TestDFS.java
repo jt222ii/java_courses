@@ -24,7 +24,7 @@ import org.junit.Test;
 import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
 
-import jt222ii_assign3.*;                      // Replace with groupname.*;
+import jt222ii.*;                      // Replace with groupname.*;
 /**
  * 
  * A  weakness in this case is that many tests

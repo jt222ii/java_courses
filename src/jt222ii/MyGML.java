@@ -1,9 +1,8 @@
-package jt222ii_assign3;
+package jt222ii;
 
 import graphs.DirectedGraph;
 import graphs.Node;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

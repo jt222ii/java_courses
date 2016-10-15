@@ -1,4 +1,4 @@
-package jt222ii_assign3;
+package jt222ii;
 
 import graphs.Node;
 

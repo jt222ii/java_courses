@@ -1,4 +1,4 @@
-package jt222ii_assign3;
+package jt222ii;
 
 /**
  * Created by jonastornfors on 2016-09-29.
